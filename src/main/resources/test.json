@@ -1,0 +1,11 @@
+{
+  "nama" : "hamada",
+  "tahun_lahir" : 1999,
+  "alamat"  :
+  {
+    "jalan" : "Amarta",
+    "no" : 3,
+    "kota" : "Tangsel"
+  }
+
+}
