@@ -1,6 +1,6 @@
 package org.jsonq.core.jsonvalue;
 
-import org.json_plus.core.exception.InvalidJSONValueTypeException;
+import org.jsonq.core.exception.InvalidJSONValueTypeException;
 
 import java.util.ArrayList;
 
