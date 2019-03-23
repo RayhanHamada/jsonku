@@ -1,5 +1,6 @@
 package org.jsonq.core.jsonvalue;
 
+import javafx.util.Pair;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -11,6 +12,7 @@ import org.jsonq.core.listener.BaseListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class JSONObject extends JSONValue {
 
@@ -22,11 +24,15 @@ public class JSONObject extends JSONValue {
     //if duplicates exist in valueMap, then it would be swapped here
     private Map<String, JSONValue> duplicatesMap;
 
+    //counter for duplicates
+    private Map<String, Integer> duplicatesKeyCount;
+
     public JSONObject()
     {
         this.value = "{}";
         this.valueMap = new HashMap<>();
         this.duplicatesMap = new HashMap<>();
+        this.duplicatesKeyCount = new HashMap<>();
     }
 
     public JSONObject(String value)
@@ -100,50 +106,6 @@ public class JSONObject extends JSONValue {
         throw new KeyNotFoundException();
     }
 
-
-    /*
-    * if 1 or more duplicate of key is detected in valueMap, then the value get swapped into duplicatesMap, so
-    * only the new pair in valueMap.
-    * */
-    public void swapToDuplicatesMap(String key)
-    {
-
-//        boolean duplicateStillExist = valueMap.containsKey(key);
-        /*
-        * the valueMap.get() method return Object type value. so i have to check if the value is also an instance of one of the subclass of JSONValue
-        * */
-
-        if (valueMap.get(key) instanceof JSONObject)
-        {
-            duplicatesMap.put(key, new JSONObject(((JSONObject)valueMap.get(key)).value));
-        }
-        else if (valueMap.get(key) instanceof JSONString)
-        {
-            duplicatesMap.put(key, new JSONString(((JSONString)valueMap.get(key)).getValue()));
-        }
-        else if (valueMap.get(key) instanceof JSONNumber)
-        {
-            duplicatesMap.put(key, new JSONNumber(((JSONNumber)valueMap.get(key)).getValue()));
-        }
-        else if (valueMap.get(key) instanceof JSONBoolean)
-        {
-            duplicatesMap.put(key, new JSONBoolean(((JSONBoolean)valueMap.get(key)).getValue()));
-        }
-        else if (valueMap.get(key) instanceof JSONArray)
-        {
-            duplicatesMap.put(key, new JSONArray(((JSONArray)valueMap.get(key)).getValue()));
-        }
-
-        valueMap.remove(key);
-    }
-
-    public String getValueTypeOf(String key)
-    {
-        if (valueMap.containsKey(key)) return ((JSONValue)valueMap.get(key)).getClass().toString().replaceAll("^.+\\.", "");
-
-        throw new KeyNotFoundException();
-    }
-
     /*
     * for put pair and create empty object and array
     * */
@@ -199,16 +161,67 @@ public class JSONObject extends JSONValue {
         updateValueString();
     }
 
-    public String getValue() {
-        return value;
+    public String getValueTypeOf(String key)
+    {
+        if (valueMap.containsKey(key)) return ((JSONValue)valueMap.get(key)).getClass().toString().replaceAll("^.+\\.", "");
+
+        throw new KeyNotFoundException();
     }
 
     /*
-    * updating string representation of value.
-    * */
+     * updating string representation of value.
+     * */
     public void updateValueString()
     {
         this.value = "";
+    }
+
+    /*
+     * if 1 or more duplicate of key is detected in valueMap, then the value get swapped into duplicatesMap, so
+     * only the new pair in valueMap.
+     * */
+    public void swapToDuplicatesMap(String key)
+    {
+
+//        boolean duplicateStillExist = valueMap.containsKey(key);
+        /*
+         * the valueMap.get() method return Object type value. so i have to check if the value is also an instance of one of the subclass of JSONValue
+         * */
+
+        if (valueMap.get(key) instanceof JSONObject)
+        {
+            duplicatesMap.put(key, new JSONObject(((JSONObject)valueMap.get(key)).value));
+        }
+        else if (valueMap.get(key) instanceof JSONString)
+        {
+            duplicatesMap.put(key, new JSONString(((JSONString)valueMap.get(key)).getValue()));
+        }
+        else if (valueMap.get(key) instanceof JSONNumber)
+        {
+            duplicatesMap.put(key, new JSONNumber(((JSONNumber)valueMap.get(key)).getValue()));
+        }
+        else if (valueMap.get(key) instanceof JSONBoolean)
+        {
+            duplicatesMap.put(key, new JSONBoolean(((JSONBoolean)valueMap.get(key)).getValue()));
+        }
+        else if (valueMap.get(key) instanceof JSONArray)
+        {
+            duplicatesMap.put(key, new JSONArray(((JSONArray)valueMap.get(key)).getValue()));
+        }
+
+        if (duplicatesKeyCount.containsKey(key))
+        {
+            int tempCount = duplicatesKeyCount.get(key);
+//            duplicatesKeyCount.
+        }
+
+        valueMap.remove(key);
+
+        Pair<String, Integer> p = new Pair<>("1", 1);
+    }
+
+    public String getValue() {
+        return value;
     }
 
     public Map<String, JSONValue> getValueMap()
@@ -219,5 +232,21 @@ public class JSONObject extends JSONValue {
     public Map<String, JSONValue> getDuplicatesMap()
     {
         return duplicatesMap;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JSONObject)) return false;
+        JSONObject that = (JSONObject) o;
+        return Objects.equals(value, that.value) &&
+                Objects.equals(valueMap, that.valueMap) &&
+                Objects.equals(duplicatesMap, that.duplicatesMap) &&
+                Objects.equals(duplicatesKeyCount, that.duplicatesKeyCount);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, valueMap, duplicatesMap, duplicatesKeyCount);
     }
 }

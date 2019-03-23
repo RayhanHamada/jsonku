@@ -3,6 +3,7 @@ package org.jsonq.core.jsonvalue;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class JSONArray extends JSONValue{
 
@@ -121,4 +122,19 @@ public class JSONArray extends JSONValue{
 
     public ArrayList<JSONValue> getElements() {
         return elements;
-    }}
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JSONArray)) return false;
+        JSONArray jsonArray = (JSONArray) o;
+        return Objects.equals(value, jsonArray.value) &&
+                Objects.equals(elements, jsonArray.elements);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, elements);
+    }
+}
