@@ -1,6 +1,5 @@
 package org.jsonq.core.jsonvalue;
 
-import javafx.util.Pair;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -10,6 +9,7 @@ import org.jsonq.core.exception.InvalidJSONValueTypeException;
 import org.jsonq.core.exception.KeyNotFoundException;
 import org.jsonq.core.listener.BaseListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -18,28 +18,30 @@ public class JSONObject extends JSONValue {
 
     private String value; // for string representation
 
+    /*
+    * save the duplicates as string of pairs, and added it into the top of value variable.
+    * */
+    private String duplicates = "";
+
     // for anything inside the object
     private Map<String, JSONValue> valueMap;
 
-    //if duplicates exist in valueMap, then it would be swapped here
-    private Map<String, JSONValue> duplicatesMap;
-
-    //counter for duplicates
-    private Map<String, Integer> duplicatesKeyCount;
-
+    /*
+    * constructor for creating empty object
+    * */
     public JSONObject()
     {
         this.value = "{}";
         this.valueMap = new HashMap<>();
-        this.duplicatesMap = new HashMap<>();
-        this.duplicatesKeyCount = new HashMap<>();
     }
 
+    /*
+    * constructor for JSON object that has value
+    * */
     public JSONObject(String value)
     {
         this.value = value;
         this.valueMap = new HashMap<>();
-        this.duplicatesMap = new HashMap<>();
 
         CharStream input = CharStreams.fromString(value);
         JSONLexer lexer = new JSONLexer(input);
@@ -112,7 +114,7 @@ public class JSONObject extends JSONValue {
 
     public JSONObject createEmptyObject(String key)
     {
-        if (valueMap.containsKey(key)) swapToDuplicatesMap(key);
+        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONObject());
         updateValueString();
 
@@ -121,7 +123,7 @@ public class JSONObject extends JSONValue {
 
     public JSONArray createEmptyArray(String key)
     {
-        if (valueMap.containsKey(key)) swapToDuplicatesMap(key);
+        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONArray());
         updateValueString();
 
@@ -130,8 +132,8 @@ public class JSONObject extends JSONValue {
 
     public void putString(String key, String value)
     {
-        if (valueMap.containsKey(key)) swapToDuplicatesMap(key);
-        valueMap.put(key, new JSONString(value));
+        if (valueMap.containsKey(key)) swapToDuplicates(key);
+        valueMap.put(key, new JSONString("\"" + value + "\""));
         updateValueString();
     }
 
@@ -139,7 +141,7 @@ public class JSONObject extends JSONValue {
     {
         if (isNumeric(value))
         {
-            if (valueMap.containsKey(key)) swapToDuplicatesMap(key);
+            if (valueMap.containsKey(key)) swapToDuplicates(key);
             valueMap.put(key, new JSONNumber(value));
             updateValueString();
             return;
@@ -149,15 +151,8 @@ public class JSONObject extends JSONValue {
 
     public void putBoolean(String key, boolean value)
     {
-        if (valueMap.containsKey(key)) swapToDuplicatesMap(key);
+        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONBoolean(value));
-        updateValueString();
-    }
-
-    public void modifyValueOf(String key, JSONValue newValue)
-    {
-        if (valueMap.containsKey(key)) valueMap.remove(key);
-        valueMap.put(key, newValue);
         updateValueString();
     }
 
@@ -173,54 +168,59 @@ public class JSONObject extends JSONValue {
      * */
     public void updateValueString()
     {
-        this.value = "";
+        ArrayList<String> vmapString = new ArrayList<>(valueMap.keySet());
+        value = "{\n" + duplicates;
+        for (String k : vmapString)
+        {
+            value += "\"" + k + "\" : " + valueMap.get(k).getValue();
+            if (vmapString.indexOf(k) != vmapString.size()-1)
+            {
+                value += ",";
+            }
+            value += "\n";
+
+        }
+        value += "\n}";
     }
 
     /*
-     * if 1 or more duplicate of key is detected in valueMap, then the value get swapped into duplicatesMap, so
+     * if 1 or more duplicate of key is detected in valueMap, then the value get swapped into duplicates, so
      * only the new pair in valueMap.
      * */
-    public void swapToDuplicatesMap(String key)
+    public void swapToDuplicates(String key)
     {
-
-//        boolean duplicateStillExist = valueMap.containsKey(key);
         /*
-         * the valueMap.get() method return Object type value. so i have to check if the value is also an instance of one of the subclass of JSONValue
+         * the valueMap.get() method return Object type value. so we have to check if the value is also an instance of one of the subclass of JSONValue
          * */
 
         if (valueMap.get(key) instanceof JSONObject)
         {
-            duplicatesMap.put(key, new JSONObject(((JSONObject)valueMap.get(key)).value));
+            duplicates += key + " : " + ((JSONObject)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONString)
         {
-            duplicatesMap.put(key, new JSONString(((JSONString)valueMap.get(key)).getValue()));
+            duplicates += key + " : " + ((JSONString)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONNumber)
         {
-            duplicatesMap.put(key, new JSONNumber(((JSONNumber)valueMap.get(key)).getValue()));
+            duplicates += key + " : " + ((JSONNumber)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONBoolean)
         {
-            duplicatesMap.put(key, new JSONBoolean(((JSONBoolean)valueMap.get(key)).getValue()));
+            duplicates += key + " : " + ((JSONBoolean)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONArray)
         {
-            duplicatesMap.put(key, new JSONArray(((JSONArray)valueMap.get(key)).getValue()));
+            duplicates += key + " : " + ((JSONArray)valueMap.get(key)).getValue();
         }
 
-        if (duplicatesKeyCount.containsKey(key))
-        {
-            int tempCount = duplicatesKeyCount.get(key);
-//            duplicatesKeyCount.
-        }
+        duplicates += ",\n";
 
         valueMap.remove(key);
-
-        Pair<String, Integer> p = new Pair<>("1", 1);
     }
 
     public String getValue() {
+//        updateValueString();
         return value;
     }
 
@@ -229,10 +229,11 @@ public class JSONObject extends JSONValue {
         return valueMap;
     }
 
-    public Map<String, JSONValue> getDuplicatesMap()
+    public String getDuplicates()
     {
-        return duplicatesMap;
+        return duplicates;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -240,13 +241,12 @@ public class JSONObject extends JSONValue {
         if (!(o instanceof JSONObject)) return false;
         JSONObject that = (JSONObject) o;
         return Objects.equals(value, that.value) &&
-                Objects.equals(valueMap, that.valueMap) &&
-                Objects.equals(duplicatesMap, that.duplicatesMap) &&
-                Objects.equals(duplicatesKeyCount, that.duplicatesKeyCount);
+                Objects.equals(duplicates, that.duplicates) &&
+                Objects.equals(valueMap, that.valueMap);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, valueMap, duplicatesMap, duplicatesKeyCount);
+        return Objects.hash(value, duplicates, valueMap);
     }
 }

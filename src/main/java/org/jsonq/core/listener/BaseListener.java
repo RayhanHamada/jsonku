@@ -19,6 +19,8 @@ public class BaseListener implements JSONListener {
 
     private boolean inOtherObject = false;
 
+    private int deepCount = 0;
+
     public BaseListener(JSONObject currentObject)
     {
         this.currentObject = currentObject;
@@ -100,7 +102,7 @@ public class BaseListener implements JSONListener {
              **/
             if (currentObject.getValueMap().containsKey(tempKey))
             {
-                currentObject.swapToDuplicatesMap(tempKey);
+                currentObject.swapToDuplicates(tempKey);
             }
 
             //add current pair to valueMap
@@ -123,7 +125,7 @@ public class BaseListener implements JSONListener {
              **/
             if (currentObject.getValueMap().containsKey(tempKey))
             {
-                currentObject.swapToDuplicatesMap(tempKey);
+                currentObject.swapToDuplicates(tempKey);
             }
 
             currentObject.getValueMap().put(tempKey, null);
@@ -140,7 +142,7 @@ public class BaseListener implements JSONListener {
         {
             if (currentObject.getValueMap().containsKey(tempKey))
             {
-                currentObject.swapToDuplicatesMap(tempKey);
+                currentObject.swapToDuplicates(tempKey);
             }
 
             if (ctx.getText().equals("true")) currentObject.getValueMap().put(tempKey, new JSONBoolean(true));
@@ -167,7 +169,7 @@ public class BaseListener implements JSONListener {
              **/
             if (currentObject.getValueMap().containsKey(tempKey))
             {
-                currentObject.swapToDuplicatesMap(tempKey);
+                currentObject.swapToDuplicates(tempKey);
             }
 
             currentObject.getValueMap().put(tempKey, new JSONNumber(input.getText(interval)));
@@ -178,28 +180,34 @@ public class BaseListener implements JSONListener {
     public void enterObject(JSONParser.ObjectContext ctx) {
 
         inOtherObject = true;
+        deepCount++;
     }
 
     public void exitObject(JSONParser.ObjectContext ctx) {
 
-        inOtherObject = false;
-        int a = ctx.start.getStartIndex();
-        int b = ctx.stop.getStopIndex();
-        Interval interval = new Interval(a, b);
-        CharStream input = ctx.start.getInputStream();
-
-        /*
-         * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
-         * to duplicatesMap, and removed from the valueMap.
-         **/
-        if (currentObject.getValueMap().containsKey(tempKey))
+        deepCount--;
+        if (deepCount == 0)
         {
-            currentObject.swapToDuplicatesMap(tempKey);
-            currentObject.getValueMap().remove(tempKey);
+            inOtherObject = false;
+            int a = ctx.start.getStartIndex();
+            int b = ctx.stop.getStopIndex();
+            Interval interval = new Interval(a, b);
+            CharStream input = ctx.start.getInputStream();
 
+            /*
+             * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
+             * to duplicatesMap, and removed from the valueMap.
+             **/
+            if (currentObject.getValueMap().containsKey(tempKey))
+            {
+                currentObject.swapToDuplicates(tempKey);
+                currentObject.getValueMap().remove(tempKey);
+
+            }
+
+            currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
         }
 
-        currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
     }
 
     public void enterArray(JSONParser.ArrayContext ctx) {

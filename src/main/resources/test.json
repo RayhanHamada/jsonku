@@ -1,10 +1,13 @@
 {
-  "nama" : "hamada",
-  "tahun_lahir" : 1999,
-  "alamat"  :
+
+  "alamat" :
   {
-    "jalan" : "Amarta",
-    "no" : 3,
-    "kota" : "Tangsel"
+    "jalan" : "Amarta 3",
+    "kota" : "Tangerang Selatan",
+    "posisi" :
+    {
+      "x" : 10,
+      "y" : 20
+    }
   }
 }

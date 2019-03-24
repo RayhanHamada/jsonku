@@ -101,7 +101,7 @@ public class JSONArray extends JSONValue{
 
     public JSONString setStringAt(int i, String st)
     {
-        elements.set(i, new JSONString(st));
+        elements.set(i, new JSONString("\"" + st + "\""));
         return (JSONString) elements.get(i);
     }
 

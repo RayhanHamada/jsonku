@@ -620,8 +620,8 @@ public class JSONParser extends Parser {
 	public final ObjectContext object() throws RecognitionException {
 		ObjectContext _localctx = new ObjectContext(_ctx, getState());
 		enterRule(_localctx, 18, RULE_object);
-		int _la;
 		try {
+			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(72);
@@ -630,19 +630,21 @@ public class JSONParser extends Parser {
 			pair();
 			setState(78);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T__3) {
-				{
-				{
-				setState(74);
-				match(T__3);
-				setState(75);
-				pair();
-				}
+			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
+			while ( _alt!=1 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1+1 ) {
+					{
+					{
+					setState(74);
+					match(T__3);
+					setState(75);
+					pair();
+					}
+					} 
 				}
 				setState(80);
 				_errHandler.sync(this);
-				_la = _input.LA(1);
+				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			}
 			setState(81);
 			match(T__4);
@@ -742,7 +744,7 @@ public class JSONParser extends Parser {
 		"\4\3\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\5\6A\n\6\3\7\3\7\3\b\3"+
 		"\b\3\t\3\t\3\n\3\n\3\13\3\13\3\13\3\13\7\13O\n\13\f\13\16\13R\13\13\3"+
 		"\13\3\13\3\f\3\f\3\f\3\f\7\fZ\n\f\f\f\16\f]\13\f\7\f_\n\f\f\f\16\fb\13"+
-		"\f\3\f\3\f\3\f\3\34\2\r\2\4\6\b\n\f\16\20\22\24\26\2\4\4\2\16\16\21\21"+
+		"\f\3\f\3\f\3\f\4\34P\2\r\2\4\6\b\n\f\16\20\22\24\26\2\4\4\2\16\16\21\21"+
 		"\3\2\17\20\2f\2\30\3\2\2\2\4!\3\2\2\2\6\64\3\2\2\2\b8\3\2\2\2\n@\3\2\2"+
 		"\2\fB\3\2\2\2\16D\3\2\2\2\20F\3\2\2\2\22H\3\2\2\2\24J\3\2\2\2\26U\3\2"+
 		"\2\2\30\34\7\3\2\2\31\33\13\2\2\2\32\31\3\2\2\2\33\36\3\2\2\2\34\35\3"+
@@ -755,7 +757,7 @@ public class JSONParser extends Parser {
 		"\b\2=A\5\22\n\2>A\5\26\f\2?A\5\24\13\2@:\3\2\2\2@;\3\2\2\2@<\3\2\2\2@"+
 		"=\3\2\2\2@>\3\2\2\2@?\3\2\2\2A\13\3\2\2\2BC\7\21\2\2C\r\3\2\2\2DE\7\r"+
 		"\2\2E\17\3\2\2\2FG\7\f\2\2G\21\3\2\2\2HI\t\3\2\2I\23\3\2\2\2JK\7\5\2\2"+
-		"KP\5\6\4\2LM\7\6\2\2MO\5\6\4\2NL\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2"+
+		"KP\5\6\4\2LM\7\6\2\2MO\5\6\4\2NL\3\2\2\2OR\3\2\2\2PQ\3\2\2\2PN\3\2\2\2"+
 		"QS\3\2\2\2RP\3\2\2\2ST\7\7\2\2T\25\3\2\2\2U`\7\t\2\2V[\5\n\6\2WX\7\6\2"+
 		"\2XZ\5\n\6\2YW\3\2\2\2Z]\3\2\2\2[Y\3\2\2\2[\\\3\2\2\2\\_\3\2\2\2][\3\2"+
 		"\2\2^V\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ac\3\2\2\2b`\3\2\2\2cd\7\n"+

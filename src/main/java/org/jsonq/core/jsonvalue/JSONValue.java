@@ -17,5 +17,5 @@ public abstract class JSONValue {
         }
     }
 
-
+    public abstract String getValue();
 }

@@ -82,7 +82,7 @@ numberLiteral
     ;
 
 object
-    : '{' pair (',' pair)* '}'
+    : '{' pair (',' pair)*? '}'
     ;
 
 array
