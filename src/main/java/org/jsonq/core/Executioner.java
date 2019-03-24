@@ -15,14 +15,16 @@ public class Executioner {
                 "    {\n" +
                 "      \"x\" : 10,\n" +
                 "      \"y\" : 20\n" +
+                "    },\n" +
+                "    \"perhitungan\" :\n" +
+                "    {\n" +
+                "        \"e\" : 234\n" +
                 "    }\n" +
                 "  }\n" +
                 "}");
 
 
-        obj.putString("Hobi", "Koding");
-        System.out.println(obj.getValue());
-//        System.out.println(obj.getDuplicates());
 
+        System.out.println(obj.getValue());
     }
 }

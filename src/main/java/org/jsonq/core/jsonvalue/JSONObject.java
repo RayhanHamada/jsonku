@@ -33,6 +33,12 @@ public class JSONObject extends JSONValue {
     {
         this.value = "{}";
         this.valueMap = new HashMap<>();
+
+        CharStream input = CharStreams.fromString(value);
+        JSONLexer lexer = new JSONLexer(input);
+        JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
+        parser.addParseListener(new BaseListener(this));
+        parser.root();
     }
 
     /*
@@ -114,7 +120,6 @@ public class JSONObject extends JSONValue {
 
     public JSONObject createEmptyObject(String key)
     {
-        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONObject());
         updateValueString();
 
@@ -123,7 +128,6 @@ public class JSONObject extends JSONValue {
 
     public JSONArray createEmptyArray(String key)
     {
-        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONArray());
         updateValueString();
 
@@ -132,7 +136,6 @@ public class JSONObject extends JSONValue {
 
     public void putString(String key, String value)
     {
-        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONString("\"" + value + "\""));
         updateValueString();
     }
@@ -141,7 +144,6 @@ public class JSONObject extends JSONValue {
     {
         if (isNumeric(value))
         {
-            if (valueMap.containsKey(key)) swapToDuplicates(key);
             valueMap.put(key, new JSONNumber(value));
             updateValueString();
             return;
@@ -151,7 +153,6 @@ public class JSONObject extends JSONValue {
 
     public void putBoolean(String key, boolean value)
     {
-        if (valueMap.containsKey(key)) swapToDuplicates(key);
         valueMap.put(key, new JSONBoolean(value));
         updateValueString();
     }
@@ -172,7 +173,7 @@ public class JSONObject extends JSONValue {
         value = "{\n" + duplicates;
         for (String k : vmapString)
         {
-            value += "\"" + k + "\" : " + valueMap.get(k).getValue();
+            value += "\t\"" + k + "\" : " + valueMap.get(k).getValue();
             if (vmapString.indexOf(k) != vmapString.size()-1)
             {
                 value += ",";
@@ -180,7 +181,7 @@ public class JSONObject extends JSONValue {
             value += "\n";
 
         }
-        value += "\n}";
+        value += "}";
     }
 
     /*
@@ -220,7 +221,6 @@ public class JSONObject extends JSONValue {
     }
 
     public String getValue() {
-//        updateValueString();
         return value;
     }
 

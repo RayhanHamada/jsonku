@@ -1,6 +1,12 @@
 package org.jsonq.core.jsonvalue;
 
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.jsonq.core.antlrgenerated.JSONLexer;
+import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
+import org.jsonq.core.listener.BaseListener;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -14,6 +20,12 @@ public class JSONArray extends JSONValue{
     {
         this.value = "[]";
         this.elements = new ArrayList<>();
+
+        CharStream input = CharStreams.fromString(value);
+        JSONLexer lexer = new JSONLexer(input);
+        JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
+        parser.addParseListener(new BaseListener(this));
+        parser.root();
     }
 
 
@@ -21,6 +33,12 @@ public class JSONArray extends JSONValue{
     {
         this.value = value;
         this.elements = new ArrayList<>();
+
+        CharStream input = CharStreams.fromString(value);
+        JSONLexer lexer = new JSONLexer(input);
+        JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
+        parser.addParseListener(new BaseListener(this));
+        parser.root();
     }
 
     /*
@@ -66,11 +84,12 @@ public class JSONArray extends JSONValue{
     }
 
     /*
-     * general setters, in order to use the return value, please cast the return value to the wanted value type
+     * general setters, in order to use the return value, cast the return value to the wanted value type if you want to use it as an argument
      * */
     public JSONValue setValueAt(int i, JSONValue v)
     {
         elements.set(i, v);
+        updateValueString();
         return elements.get(i);
     }
 
@@ -80,12 +99,14 @@ public class JSONArray extends JSONValue{
     public JSONObject setObjectAt(int i, JSONObject object)
     {
         elements.set(i, object);
+        updateValueString();
         return (JSONObject) elements.get(i);
     }
 
     public JSONArray setArrayAt(int i, JSONArray array)
     {
         elements.set(i, array);
+        updateValueString();
         return (JSONArray) elements.get(i);
     }
 
@@ -94,6 +115,7 @@ public class JSONArray extends JSONValue{
         if (isNumeric(number))
         {
             elements.set(i, new JSONNumber(number));
+            updateValueString();
             return (JSONNumber) elements.get(i);
         }
         throw new NumberFormatException();
@@ -102,18 +124,92 @@ public class JSONArray extends JSONValue{
     public JSONString setStringAt(int i, String st)
     {
         elements.set(i, new JSONString("\"" + st + "\""));
+        updateValueString();
         return (JSONString) elements.get(i);
     }
 
     public JSONBoolean setBoolAt(int i, boolean bool)
     {
         elements.set(i, new JSONBoolean(bool));
+        updateValueString();
         return (JSONBoolean) elements.get(i);
+    }
+
+
+    /*
+    * general adder, cast the return value to the wanted value type if you want to use it as an argument
+    * */
+    public JSONValue addValue(JSONValue value)
+    {
+        elements.add(value);
+        updateValueString();
+        return elements.get(elements.size()-1);
+    }
+
+    /*
+    * element adder for instant appending
+    * */
+
+    public JSONObject addObject(JSONObject object)
+    {
+        elements.add(object);
+        updateValueString();
+        return (JSONObject) elements.get(elements.size()-1);
+    }
+
+    public JSONArray addArray(JSONArray array)
+    {
+        elements.add(array);
+        updateValueString();
+        return (JSONArray) elements.get(elements.size()-1);
+    }
+
+    public JSONNumber addNumber(JSONNumber number)
+    {
+        elements.add(number);
+        updateValueString();
+        return (JSONNumber) elements.get(elements.size()-1);
+    }
+
+    public JSONString addString(JSONString string)
+    {
+        elements.add(string);
+        updateValueString();
+        return (JSONString) elements.get(elements.size()-1);
+    }
+
+    public JSONBoolean addBoolean(JSONBoolean bool)
+    {
+        elements.add(bool);
+        updateValueString();
+        return (JSONBoolean) elements.get(elements.size()-1);
+    }
+
+    /*
+    * element remover
+    * */
+    public void removeElement(int i)
+    {
+        elements.remove(i);
+        updateValueString();
+    }
+
+    public void removeElement(JSONValue value)
+    {
+        elements.remove(value);
+        updateValueString();
     }
 
     public void updateValueString()
     {
+        value = "[";
 
+        for (JSONValue v : elements)
+        {
+            value += v.getValue() + ",";
+        }
+
+        value = value.replaceAll(",$", "") + "]";
     }
 
     public String getValue() {

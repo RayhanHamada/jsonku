@@ -1,5 +1,4 @@
 {
-
   "alamat" :
   {
     "jalan" : "Amarta 3",
@@ -8,6 +7,10 @@
     {
       "x" : 10,
       "y" : 20
+    },
+    "perhitungan" :
+    {
+        "e" : 234
     }
   }
 }
