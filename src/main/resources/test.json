@@ -1,16 +1,5 @@
 {
-  "alamat" :
-  {
-    "jalan" : "Amarta 3",
-    "kota" : "Tangerang Selatan",
-    "posisi" :
-    {
-      "x" : 10,
-      "y" : 20
-    },
-    "perhitungan" :
-    {
-        "e" : 234
-    }
-  }
+
+  "nama" : "Rayhan",
+  "angka" : [1,2,3,4,5,6]
 }

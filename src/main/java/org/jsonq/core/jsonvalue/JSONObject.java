@@ -7,7 +7,7 @@ import org.jsonq.core.antlrgenerated.JSONLexer;
 import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
 import org.jsonq.core.exception.KeyNotFoundException;
-import org.jsonq.core.listener.BaseListener;
+import org.jsonq.core.listener.ObjectBaseListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public class JSONObject extends JSONValue {
         CharStream input = CharStreams.fromString(value);
         JSONLexer lexer = new JSONLexer(input);
         JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
-        parser.addParseListener(new BaseListener(this));
+        parser.addParseListener(new ObjectBaseListener(this));
         parser.root();
     }
 
@@ -52,7 +52,7 @@ public class JSONObject extends JSONValue {
         CharStream input = CharStreams.fromString(value);
         JSONLexer lexer = new JSONLexer(input);
         JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
-        parser.addParseListener(new BaseListener(this));
+        parser.addParseListener(new ObjectBaseListener(this));
         parser.root();
     }
 

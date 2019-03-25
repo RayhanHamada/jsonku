@@ -8,31 +8,22 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import org.jsonq.core.antlrgenerated.JSONListener;
 import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.jsonvalue.*;
-import org.jsonq.core.jsonvalue.JSONArray;
 import org.jsonq.core.jsonvalue.JSONObject;
 
-public class BaseListener implements JSONListener {
+public class ObjectBaseListener implements JSONListener {
 
     private JSONObject currentObject;
-    private JSONArray  currentArray;
     private String tempKey = "";
 
     private boolean inOtherObject = false;
+    private boolean inOtherArray = false;
+    private int objectScopeDeepCount = 0;
+    private int arrayScopeDeepCount = 0;
 
-    private int deepCount = 0;
-
-    public BaseListener(JSONObject currentObject)
+    public ObjectBaseListener(JSONObject currentObject)
     {
         this.currentObject = currentObject;
-        this.currentArray = null;
     }
-
-    public BaseListener(JSONArray currentArray)
-    {
-        this.currentArray = currentArray;
-        this.currentObject = null;
-    }
-
 
     public void enterComments(JSONParser.CommentsContext ctx) {
 
@@ -180,13 +171,13 @@ public class BaseListener implements JSONListener {
     public void enterObject(JSONParser.ObjectContext ctx) {
 
         inOtherObject = true;
-        deepCount++;
+        objectScopeDeepCount++;
     }
 
     public void exitObject(JSONParser.ObjectContext ctx) {
 
-        deepCount--;
-        if (deepCount == 0)
+        objectScopeDeepCount--;
+        if (objectScopeDeepCount == 0)
         {
             inOtherObject = false;
             int a = ctx.start.getStartIndex();
@@ -201,8 +192,6 @@ public class BaseListener implements JSONListener {
             if (currentObject.getValueMap().containsKey(tempKey))
             {
                 currentObject.swapToDuplicates(tempKey);
-                currentObject.getValueMap().remove(tempKey);
-
             }
 
             currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
@@ -211,11 +200,28 @@ public class BaseListener implements JSONListener {
     }
 
     public void enterArray(JSONParser.ArrayContext ctx) {
-
+        inOtherArray = true;
+        arrayScopeDeepCount++;
     }
 
     public void exitArray(JSONParser.ArrayContext ctx) {
+        arrayScopeDeepCount--;
 
+        if (arrayScopeDeepCount == 0)
+        {
+            inOtherArray = false;
+            int a = ctx.start.getStartIndex();
+            int b = ctx.stop.getStopIndex();
+            Interval interval = new Interval(a, b);
+            CharStream input = ctx.start.getInputStream();
+
+            if (currentObject.getValueMap().containsKey(tempKey))
+            {
+                currentObject.swapToDuplicates(tempKey);
+            }
+
+            currentObject.getValueMap().put(tempKey, new JSONArray(input.getText(interval)));
+        }
     }
 
     public void visitTerminal(TerminalNode node) {
