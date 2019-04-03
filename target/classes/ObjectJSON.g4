@@ -1,4 +1,4 @@
-grammar JSON;
+grammar ObjectJSON;
 
 TO_SKIP     : ([\r\t\n] | ' ') -> skip
             ;
@@ -44,8 +44,9 @@ comments
     : '/*' .*? '*/'
     ;
 
-root
-    : '{' ((pair|NULL_LITERAL) (',' pair)*)* '}'
+objectRoot
+    : '{' (pair (',' pair)*)* '}'
+    | NULL_LITERAL
     ;
 
 pair
@@ -53,7 +54,7 @@ pair
     ;
 
 key
-    :(STRING_LITERAL|IDENTIFIER)
+    :STRING_LITERAL
     ;
 
 value
@@ -78,11 +79,12 @@ booleanLiteral
     ;
 
 numberLiteral
-    : DECIMAL_LITERAL | FLOAT_LITERAL
+    : DECIMAL_LITERAL
+    | FLOAT_LITERAL
     ;
 
 object
-    : '{' pair (',' pair)*? '}'
+    : '{' (pair (',' pair)*)* '}'
     ;
 
 array

@@ -5,57 +5,60 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import org.jsonq.core.antlrgenerated.JSONListener;
-import org.jsonq.core.antlrgenerated.JSONParser;
+import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONListener;
+import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONParser;
 import org.jsonq.core.jsonvalue.*;
 import org.jsonq.core.jsonvalue.JSONObject;
 
-public class ObjectBaseListener implements JSONListener {
+public class BaseListener implements ObjectJSONListener {
 
-    private JSONObject currentObject;
+    private JSONObject currentObject = null;
+
+    public static boolean canExecuteSomething = true;
+
     private String tempKey = "";
 
-    private boolean inOtherObject = false;
-    private boolean inOtherArray = false;
+    private boolean inNestedObject = false;
+    private boolean inNestedArray = false;
     private int objectScopeDeepCount = 0;
     private int arrayScopeDeepCount = 0;
 
-    public ObjectBaseListener(JSONObject currentObject)
+    public BaseListener(JSONObject currentObject)
     {
         this.currentObject = currentObject;
     }
 
-    public void enterComments(JSONParser.CommentsContext ctx) {
+    public void enterComments(ObjectJSONParser.CommentsContext ctx) {
 
     }
 
-    public void exitComments(JSONParser.CommentsContext ctx) {
+    public void exitComments(ObjectJSONParser.CommentsContext ctx) {
 
     }
 
-    public void enterRoot(JSONParser.RootContext ctx) {
+    public void enterObjectRoot(ObjectJSONParser.ObjectRootContext ctx) {
 
     }
 
-    public void exitRoot(JSONParser.RootContext ctx) {
+    public void exitObjectRoot(ObjectJSONParser.ObjectRootContext ctx) {
 
     }
 
-    public void enterPair(JSONParser.PairContext ctx) {
+    public void enterPair(ObjectJSONParser.PairContext ctx) {
 
     }
 
-    public void exitPair(JSONParser.PairContext ctx) {
+    public void exitPair(ObjectJSONParser.PairContext ctx) {
 
     }
 
-    public void enterKey(JSONParser.KeyContext ctx) {
+    public void enterKey(ObjectJSONParser.KeyContext ctx) {
 
     }
 
-    public void exitKey(JSONParser.KeyContext ctx) {
+    public void exitKey(ObjectJSONParser.KeyContext ctx) {
 
-        if (!inOtherObject)
+        if (!inNestedObject)
         {
             int a = ctx.start.getStartIndex();
             int b = ctx.stop.getStopIndex();
@@ -66,21 +69,21 @@ public class ObjectBaseListener implements JSONListener {
         }
     }
 
-    public void enterValue(JSONParser.ValueContext ctx) {
+    public void enterValue(ObjectJSONParser.ValueContext ctx) {
 
     }
 
-    public void exitValue(JSONParser.ValueContext ctx) {
+    public void exitValue(ObjectJSONParser.ValueContext ctx) {
 
     }
 
-    public void enterStringLiteral(JSONParser.StringLiteralContext ctx) {
+    public void enterStringLiteral(ObjectJSONParser.StringLiteralContext ctx) {
 
     }
 
-    public void exitStringLiteral(JSONParser.StringLiteralContext ctx) {
+    public void exitStringLiteral(ObjectJSONParser.StringLiteralContext ctx) {
 
-        if (!inOtherObject)
+        if (!inNestedObject && !inNestedArray)
         {
             int a = ctx.start.getStartIndex();
             int b = ctx.stop.getStopIndex();
@@ -99,37 +102,23 @@ public class ObjectBaseListener implements JSONListener {
             //add current pair to valueMap
             currentObject.getValueMap().put(tempKey, new JSONString(input.getText(interval)));
         }
+    }
+
+    public void enterNullLiteral(ObjectJSONParser.NullLiteralContext ctx) {
 
     }
 
-    public void enterNullLiteral(JSONParser.NullLiteralContext ctx) {
+    public void exitNullLiteral(ObjectJSONParser.NullLiteralContext ctx) {
 
     }
 
-    public void exitNullLiteral(JSONParser.NullLiteralContext ctx) {
-
-        if (!inOtherObject)
-        {
-            /*
-             * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
-             * to duplicatesMap, and removed from the valueMap.
-             **/
-            if (currentObject.getValueMap().containsKey(tempKey))
-            {
-                currentObject.swapToDuplicates(tempKey);
-            }
-
-            currentObject.getValueMap().put(tempKey, null);
-        }
-    }
-
-    public void enterBooleanLiteral(JSONParser.BooleanLiteralContext ctx) {
+    public void enterBooleanLiteral(ObjectJSONParser.BooleanLiteralContext ctx) {
 
     }
 
-    public void exitBooleanLiteral(JSONParser.BooleanLiteralContext ctx) {
+    public void exitBooleanLiteral(ObjectJSONParser.BooleanLiteralContext ctx) {
 
-        if (!inOtherObject)
+        if (!inNestedObject && !inNestedArray)
         {
             if (currentObject.getValueMap().containsKey(tempKey))
             {
@@ -141,13 +130,13 @@ public class ObjectBaseListener implements JSONListener {
         }
     }
 
-    public void enterNumberLiteral(JSONParser.NumberLiteralContext ctx) {
+    public void enterNumberLiteral(ObjectJSONParser.NumberLiteralContext ctx) {
 
     }
 
-    public void exitNumberLiteral(JSONParser.NumberLiteralContext ctx) {
+    public void exitNumberLiteral(ObjectJSONParser.NumberLiteralContext ctx) {
 
-        if (!inOtherObject)
+        if (!inNestedObject && !inNestedArray)
         {
             int a = ctx.start.getStartIndex();
             int b = ctx.stop.getStopIndex();
@@ -165,21 +154,21 @@ public class ObjectBaseListener implements JSONListener {
 
             currentObject.getValueMap().put(tempKey, new JSONNumber(input.getText(interval)));
         }
-
     }
 
-    public void enterObject(JSONParser.ObjectContext ctx) {
+    public void enterObject(ObjectJSONParser.ObjectContext ctx) {
 
-        inOtherObject = true;
+        inNestedObject = true;
         objectScopeDeepCount++;
     }
 
-    public void exitObject(JSONParser.ObjectContext ctx) {
+    public void exitObject(ObjectJSONParser.ObjectContext ctx) {
 
         objectScopeDeepCount--;
+
         if (objectScopeDeepCount == 0)
         {
-            inOtherObject = false;
+            inNestedObject = false;
             int a = ctx.start.getStartIndex();
             int b = ctx.stop.getStopIndex();
             Interval interval = new Interval(a, b);
@@ -199,22 +188,29 @@ public class ObjectBaseListener implements JSONListener {
 
     }
 
-    public void enterArray(JSONParser.ArrayContext ctx) {
-        inOtherArray = true;
-        arrayScopeDeepCount++;
+    public void enterArray(ObjectJSONParser.ArrayContext ctx) {
+
+        if (!inNestedObject)
+        {
+            arrayScopeDeepCount++;
+            inNestedArray = true;
+        }
     }
 
-    public void exitArray(JSONParser.ArrayContext ctx) {
+    public void exitArray(ObjectJSONParser.ArrayContext ctx) {
         arrayScopeDeepCount--;
-
         if (arrayScopeDeepCount == 0)
         {
-            inOtherArray = false;
+            inNestedArray = false;
             int a = ctx.start.getStartIndex();
             int b = ctx.stop.getStopIndex();
             Interval interval = new Interval(a, b);
             CharStream input = ctx.start.getInputStream();
 
+            /*
+             * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
+             * to duplicatesMap, and removed from the valueMap.
+             **/
             if (currentObject.getValueMap().containsKey(tempKey))
             {
                 currentObject.swapToDuplicates(tempKey);
@@ -229,7 +225,7 @@ public class ObjectBaseListener implements JSONListener {
     }
 
     public void visitErrorNode(ErrorNode node) {
-
+        canExecuteSomething = false;
     }
 
     public void enterEveryRule(ParserRuleContext ctx) {
@@ -239,4 +235,5 @@ public class ObjectBaseListener implements JSONListener {
     public void exitEveryRule(ParserRuleContext ctx) {
 
     }
+
 }

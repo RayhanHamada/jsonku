@@ -3,11 +3,7 @@ package org.jsonq.core.jsonvalue;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.jsonq.core.antlrgenerated.JSONLexer;
-import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
-import org.jsonq.core.listener.ArrayBaseListener;
-import org.jsonq.core.listener.ObjectBaseListener;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -27,12 +23,6 @@ public class JSONArray extends JSONValue{
     {
         this.value = value;
         this.elements = new ArrayList<>();
-
-        CharStream input = CharStreams.fromString(value);
-        JSONLexer lexer = new JSONLexer(input);
-        JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
-        parser.addParseListener(new ArrayBaseListener(this));
-        parser.array();
     }
 
     /*

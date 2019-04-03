@@ -1,4 +1,4 @@
-grammar ArrayJSON;
+grammar ObjectJSON;
 
 TO_SKIP     : ([\r\t\n] | ' ') -> skip
             ;
@@ -44,3 +44,49 @@ comments
     : '/*' .*? '*/'
     ;
 
+objectRoot
+    : '{' (pair (',' pair)*)* '}'
+    | NULL_LITERAL
+    ;
+
+pair
+    : key ':' value
+    ;
+
+key
+    :STRING_LITERAL
+    ;
+
+value
+    : booleanLiteral
+    | stringLiteral
+    | nullLiteral
+    | numberLiteral
+    | array
+    | object
+    ;
+
+stringLiteral
+    : STRING_LITERAL
+    ;
+
+nullLiteral
+    : NULL_LITERAL
+    ;
+
+booleanLiteral
+    : BOOLEAN_LITERAL
+    ;
+
+numberLiteral
+    : DECIMAL_LITERAL
+    | FLOAT_LITERAL
+    ;
+
+object
+    : '{' (pair (',' pair)*)* '}'
+    ;
+
+array
+    : '[' (value (',' value)*)* ']'
+    ;
