@@ -3,7 +3,11 @@ package org.jsonq.core.jsonvalue;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONLexer;
+import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
+import org.jsonq.core.exception.JSONArrayIndexOutOfBoundException;
+import org.jsonq.core.listener.BaseListener;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -23,6 +27,12 @@ public class JSONArray extends JSONValue{
     {
         this.value = value;
         this.elements = new ArrayList<>();
+
+        CharStream input = CharStreams.fromString(value);
+        ObjectJSONLexer lexer = new ObjectJSONLexer(input);
+        ObjectJSONParser parser = new ObjectJSONParser(new CommonTokenStream(lexer));
+        parser.addParseListener(new BaseListener(this));
+        parser.array();
     }
 
     /*
@@ -30,6 +40,13 @@ public class JSONArray extends JSONValue{
      * */
     public JSONValue getValueAt(int i)
     {
+
+        if (i >= elements.size()) try {
+            throw new JSONArrayIndexOutOfBoundException();
+        } catch (JSONArrayIndexOutOfBoundException e) {
+            e.printStackTrace();
+        }
+
         return elements.get(i);
     }
 
@@ -39,18 +56,39 @@ public class JSONArray extends JSONValue{
 
     public JSONObject getObjectAt(int i)
     {
+
+        if (i >= elements.size()) try {
+            throw new JSONArrayIndexOutOfBoundException();
+        } catch (JSONArrayIndexOutOfBoundException e) {
+            e.printStackTrace();
+        }
+
         if (elements.get(i) instanceof JSONObject) return (JSONObject) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 
     public JSONArray getArrayAt(int i)
     {
+
+        if (i >= elements.size()) try {
+            throw new JSONArrayIndexOutOfBoundException();
+        } catch (JSONArrayIndexOutOfBoundException e) {
+            e.printStackTrace();
+        }
+
         if (elements.get(i) instanceof JSONArray) return (JSONArray) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 
     public JSONNumber getNumberAt(int i)
     {
+
+        if (i >= elements.size()) try {
+            throw new JSONArrayIndexOutOfBoundException();
+        } catch (JSONArrayIndexOutOfBoundException e) {
+            e.printStackTrace();
+        }
+
         if (elements.get(i) instanceof JSONNumber) return (JSONNumber) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
@@ -63,6 +101,13 @@ public class JSONArray extends JSONValue{
 
     public JSONBoolean getBooleanAt(int i)
     {
+
+        if (i >= elements.size()) try {
+            throw new JSONArrayIndexOutOfBoundException();
+        } catch (JSONArrayIndexOutOfBoundException e) {
+            e.printStackTrace();
+        }
+
         if (elements.get(i) instanceof JSONBoolean) return (JSONBoolean) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
@@ -72,6 +117,7 @@ public class JSONArray extends JSONValue{
      * */
     public JSONValue setValueAt(int i, JSONValue v)
     {
+
         elements.set(i, v);
         updateValueString();
         return elements.get(i);
@@ -197,6 +243,7 @@ public class JSONArray extends JSONValue{
     }
 
     public String getValue() {
+        updateValueString();
         return value;
     }
 

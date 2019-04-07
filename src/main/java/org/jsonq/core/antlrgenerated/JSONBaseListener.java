@@ -1,148 +1,148 @@
-// Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\ObjectJSON.g4 by ANTLR 4.7.2
-package org.jsonq.core.antlrgenerated.objectgrammar;
+// Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\JSON.g4 by ANTLR 4.7.2
+package org.jsonq.core.antlrgenerated;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link ObjectJSONListener},
+ * This class provides an empty implementation of {@link JSONListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class ObjectJSONBaseListener implements ObjectJSONListener {
+public class JSONBaseListener implements JSONListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComments(ObjectJSONParser.CommentsContext ctx) { }
+	@Override public void enterComments(JSONParser.CommentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComments(ObjectJSONParser.CommentsContext ctx) { }
+	@Override public void exitComments(JSONParser.CommentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterObjectRoot(ObjectJSONParser.ObjectRootContext ctx) { }
+	@Override public void enterObjectRoot(JSONParser.ObjectRootContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitObjectRoot(ObjectJSONParser.ObjectRootContext ctx) { }
+	@Override public void exitObjectRoot(JSONParser.ObjectRootContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPair(ObjectJSONParser.PairContext ctx) { }
+	@Override public void enterPair(JSONParser.PairContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPair(ObjectJSONParser.PairContext ctx) { }
+	@Override public void exitPair(JSONParser.PairContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterKey(ObjectJSONParser.KeyContext ctx) { }
+	@Override public void enterKey(JSONParser.KeyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitKey(ObjectJSONParser.KeyContext ctx) { }
+	@Override public void exitKey(JSONParser.KeyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValue(ObjectJSONParser.ValueContext ctx) { }
+	@Override public void enterValue(JSONParser.ValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValue(ObjectJSONParser.ValueContext ctx) { }
+	@Override public void exitValue(JSONParser.ValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStringLiteral(ObjectJSONParser.StringLiteralContext ctx) { }
+	@Override public void enterStringLiteral(JSONParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStringLiteral(ObjectJSONParser.StringLiteralContext ctx) { }
+	@Override public void exitStringLiteral(JSONParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNullLiteral(ObjectJSONParser.NullLiteralContext ctx) { }
+	@Override public void enterNullLiteral(JSONParser.NullLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNullLiteral(ObjectJSONParser.NullLiteralContext ctx) { }
+	@Override public void exitNullLiteral(JSONParser.NullLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBooleanLiteral(ObjectJSONParser.BooleanLiteralContext ctx) { }
+	@Override public void enterBooleanLiteral(JSONParser.BooleanLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBooleanLiteral(ObjectJSONParser.BooleanLiteralContext ctx) { }
+	@Override public void exitBooleanLiteral(JSONParser.BooleanLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumberLiteral(ObjectJSONParser.NumberLiteralContext ctx) { }
+	@Override public void enterNumberLiteral(JSONParser.NumberLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumberLiteral(ObjectJSONParser.NumberLiteralContext ctx) { }
+	@Override public void exitNumberLiteral(JSONParser.NumberLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterObject(ObjectJSONParser.ObjectContext ctx) { }
+	@Override public void enterObject(JSONParser.ObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitObject(ObjectJSONParser.ObjectContext ctx) { }
+	@Override public void exitObject(JSONParser.ObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArray(ObjectJSONParser.ArrayContext ctx) { }
+	@Override public void enterArray(JSONParser.ArrayContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArray(ObjectJSONParser.ArrayContext ctx) { }
+	@Override public void exitArray(JSONParser.ArrayContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

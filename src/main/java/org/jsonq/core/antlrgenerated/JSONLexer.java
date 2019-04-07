@@ -1,5 +1,5 @@
-// Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\ObjectJSON.g4 by ANTLR 4.7.2
-package org.jsonq.core.antlrgenerated.objectgrammar;
+// Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\JSON.g4 by ANTLR 4.7.2
+package org.jsonq.core.antlrgenerated;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class ObjectJSONLexer extends Lexer {
+public class JSONLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -85,13 +85,13 @@ public class ObjectJSONLexer extends Lexer {
 	}
 
 
-	public ObjectJSONLexer(CharStream input) {
+	public JSONLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "ObjectJSON.g4"; }
+	public String getGrammarFileName() { return "JSON.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

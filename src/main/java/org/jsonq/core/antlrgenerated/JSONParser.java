@@ -1,5 +1,5 @@
-// Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\ObjectJSON.g4 by ANTLR 4.7.2
-package org.jsonq.core.antlrgenerated.objectgrammar;
+// Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\JSON.g4 by ANTLR 4.7.2
+package org.jsonq.core.antlrgenerated;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class ObjectJSONParser extends Parser {
+public class JSONParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -80,7 +80,7 @@ public class ObjectJSONParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "ObjectJSON.g4"; }
+	public String getGrammarFileName() { return "JSON.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -91,7 +91,7 @@ public class ObjectJSONParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public ObjectJSONParser(TokenStream input) {
+	public JSONParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -103,11 +103,11 @@ public class ObjectJSONParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_comments; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterComments(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterComments(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitComments(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitComments(this);
 		}
 	}
 
@@ -158,18 +158,18 @@ public class ObjectJSONParser extends Parser {
 		public PairContext pair(int i) {
 			return getRuleContext(PairContext.class,i);
 		}
-		public TerminalNode NULL_LITERAL() { return getToken(ObjectJSONParser.NULL_LITERAL, 0); }
+		public TerminalNode NULL_LITERAL() { return getToken(JSONParser.NULL_LITERAL, 0); }
 		public ObjectRootContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_objectRoot; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterObjectRoot(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterObjectRoot(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitObjectRoot(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitObjectRoot(this);
 		}
 	}
 
@@ -255,11 +255,11 @@ public class ObjectJSONParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_pair; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterPair(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterPair(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitPair(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitPair(this);
 		}
 	}
 
@@ -289,18 +289,18 @@ public class ObjectJSONParser extends Parser {
 	}
 
 	public static class KeyContext extends ParserRuleContext {
-		public TerminalNode STRING_LITERAL() { return getToken(ObjectJSONParser.STRING_LITERAL, 0); }
+		public TerminalNode STRING_LITERAL() { return getToken(JSONParser.STRING_LITERAL, 0); }
 		public KeyContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_key; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterKey(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterKey(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitKey(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitKey(this);
 		}
 	}
 
@@ -350,11 +350,11 @@ public class ObjectJSONParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterValue(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitValue(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitValue(this);
 		}
 	}
 
@@ -424,18 +424,18 @@ public class ObjectJSONParser extends Parser {
 	}
 
 	public static class StringLiteralContext extends ParserRuleContext {
-		public TerminalNode STRING_LITERAL() { return getToken(ObjectJSONParser.STRING_LITERAL, 0); }
+		public TerminalNode STRING_LITERAL() { return getToken(JSONParser.STRING_LITERAL, 0); }
 		public StringLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stringLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterStringLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterStringLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitStringLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitStringLiteral(this);
 		}
 	}
 
@@ -461,18 +461,18 @@ public class ObjectJSONParser extends Parser {
 	}
 
 	public static class NullLiteralContext extends ParserRuleContext {
-		public TerminalNode NULL_LITERAL() { return getToken(ObjectJSONParser.NULL_LITERAL, 0); }
+		public TerminalNode NULL_LITERAL() { return getToken(JSONParser.NULL_LITERAL, 0); }
 		public NullLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_nullLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterNullLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterNullLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitNullLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitNullLiteral(this);
 		}
 	}
 
@@ -498,18 +498,18 @@ public class ObjectJSONParser extends Parser {
 	}
 
 	public static class BooleanLiteralContext extends ParserRuleContext {
-		public TerminalNode BOOLEAN_LITERAL() { return getToken(ObjectJSONParser.BOOLEAN_LITERAL, 0); }
+		public TerminalNode BOOLEAN_LITERAL() { return getToken(JSONParser.BOOLEAN_LITERAL, 0); }
 		public BooleanLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_booleanLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterBooleanLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterBooleanLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitBooleanLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitBooleanLiteral(this);
 		}
 	}
 
@@ -535,19 +535,19 @@ public class ObjectJSONParser extends Parser {
 	}
 
 	public static class NumberLiteralContext extends ParserRuleContext {
-		public TerminalNode DECIMAL_LITERAL() { return getToken(ObjectJSONParser.DECIMAL_LITERAL, 0); }
-		public TerminalNode FLOAT_LITERAL() { return getToken(ObjectJSONParser.FLOAT_LITERAL, 0); }
+		public TerminalNode DECIMAL_LITERAL() { return getToken(JSONParser.DECIMAL_LITERAL, 0); }
+		public TerminalNode FLOAT_LITERAL() { return getToken(JSONParser.FLOAT_LITERAL, 0); }
 		public NumberLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_numberLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterNumberLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterNumberLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitNumberLiteral(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitNumberLiteral(this);
 		}
 	}
 
@@ -594,11 +594,11 @@ public class ObjectJSONParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_object; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterObject(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterObject(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitObject(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitObject(this);
 		}
 	}
 
@@ -669,11 +669,11 @@ public class ObjectJSONParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_array; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).enterArray(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterArray(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ObjectJSONListener ) ((ObjectJSONListener)listener).exitArray(this);
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitArray(this);
 		}
 	}
 

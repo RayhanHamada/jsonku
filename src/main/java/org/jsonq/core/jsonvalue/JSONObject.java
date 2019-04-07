@@ -169,6 +169,16 @@ public class JSONObject extends JSONValue {
         value = "{\n" + duplicates;
         for (String k : vmapString)
         {
+
+            /*
+            * if the key belong to "nestable" value, then the "nestable" value should update the string value
+            * before
+            * */
+            if (valueMap.get(k) instanceof JSONObject)
+                ((JSONObject)valueMap.get(k)).updateValueString();
+            else if (valueMap.get(k) instanceof JSONArray)
+                ((JSONArray)valueMap.get(k)).updateValueString();
+
             value += "\t\"" + k + "\" : " + valueMap.get(k).getValue();
             if (vmapString.indexOf(k) != vmapString.size()-1)
             {
@@ -217,6 +227,7 @@ public class JSONObject extends JSONValue {
     }
 
     public String getValue() {
+        updateValueString();
         return value;
     }
 

@@ -44,3 +44,33 @@ comments
     : '/*' .*? '*/'
     ;
 
+booleanLiteral
+    : BOOLEAN_LITERAL
+    ;
+
+stringLiteral
+    : STRING_LITERAL
+    ;
+
+nullLiteral
+    : NULL_LITERAL
+    ;
+
+numberLiteral
+    : DECIMAL_LITERAL
+    | FLOAT_LITERAL
+    ;
+
+value
+    : booleanLiteral
+    | stringLiteral
+    | nullLiteral
+    | numberLiteral
+    | array
+    | object
+    ;
+
+array
+    : '[' (value (',' value)*)* ']'
+    ;
+

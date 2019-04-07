@@ -6,4 +6,9 @@ public class InvalidJSONValueTypeException extends RuntimeException {
     {
         super(message);
     }
+
+    public InvalidJSONValueTypeException()
+    {
+
+    }
 }

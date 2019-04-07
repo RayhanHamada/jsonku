@@ -1,4 +1,4 @@
-grammar ObjectJSON;
+grammar JSON;
 
 TO_SKIP     : ([\r\t\n] | ' ') -> skip
             ;
