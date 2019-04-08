@@ -4,39 +4,36 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java" line="229" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe4b4047-37ce-4ea5-b5d4-a4d42abc4ac8" name="Default Changelist" comment="refactor ObjectJSON.g4 to JSON.g4, and adding JSONArray functionality, JSONArray can be filled with number, boolean, string, and null">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONNull.class" afterDir="false" />
+    <list default="true" id="fe4b4047-37ce-4ea5-b5d4-a4d42abc4ac8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSON.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSON.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSON.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSON.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/JSONPair.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONBoolean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ArrayJSON.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ArrayJSON.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ObjectJSON.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/JSON.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ArrayJSON.g4" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ArrayJSON.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ObjectJSON.g4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/Executioner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/Executioner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/InvalidJSONValueTypeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/InvalidJSONValueTypeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONLexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$ArrayContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$BooleanLiteralContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$CommentsContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$KeyContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$NullLiteralContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$NumberLiteralContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$ObjectContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$ObjectRootContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$PairContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$StringLiteralContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser$ValueContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/antlrgenerated/objectgrammar/ObjectJSONParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/customtools/JSONPair.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONArray.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONValue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/listener/BaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/listener/BaseListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test.json" afterDir="false" />
     </list>
@@ -55,23 +52,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
+            <state relative-caret-position="406">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding>
-                <element signature="e#852#853#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,10 +64,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="197">
+              <caret line="256" selection-start-line="256" selection-end-line="256" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8355#8356#0" expanded="true" />
+                <element signature="e#8429#8430#0" expanded="true" />
+                <element signature="e#8900#8901#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="-2895">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,16 +92,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/test.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+            <state relative-caret-position="187">
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,22 +110,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/JSON.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="297" column="42" selection-start-line="297" selection-start-column="42" selection-end-line="297" selection-end-column="42" />
+            <state relative-caret-position="214">
+              <caret line="319" selection-start-line="319" selection-end-line="319" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9580#9581#0" expanded="true" />
+                <element signature="e#9536#9537#0" expanded="true" />
+                <element signature="e#9579#9580#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,7 +142,17 @@
       <find>putNumber</find>
       <find>create</find>
       <find>void update</find>
+      <find>ObjectJSONParser</find>
+      <find>nullLiteral</find>
+      <find>JSONS</find>
+      <find>getJSONSt</find>
+      <find>getJSONNum</find>
+      <find>updateVal</find>
+      <find>getVa</find>
     </findStrings>
+    <replaceStrings>
+      <replace>JSONParser</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -177,9 +166,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/Pair.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONBoolean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/JSONPair.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/ArrayBaseListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/ObjectBaseListener.java" />
@@ -190,13 +176,16 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNull.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/test.json" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/JSON.g4" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONBoolean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/test.json" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java" />
       </list>
     </option>
   </component>
@@ -232,7 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -332,6 +320,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -459,13 +448,21 @@
       <option name="project" value="LOCAL" />
       <updated>1554261042738</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor ObjectJSON.g4 to JSON.g4, and adding JSONArray functionality, JSONArray can be filled with number, boolean, string, and null">
+      <created>1554640262277</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554640262277</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.21744967" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.2261745" />
       <window_info id="Structure" order="1" sideWeight="0.5020408" side_tool="true" weight="0.19060403" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -474,8 +471,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.22096318" />
-      <window_info anchor="bottom" x="2083" y="345" width="954" height="325" id="Debug" order="3" sideWeight="0.49932885" type="FLOATING" visible="true" weight="0.305949" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.23654391" />
+      <window_info anchor="bottom" x="360" y="588" width="842" height="198" id="Debug" order="3" sideWeight="0.49932885" type="FLOATING" weight="0.305949" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -543,262 +540,281 @@
     <MESSAGE value="working on JSONArray" />
     <MESSAGE value="adding ArrayBaseListener" />
     <MESSAGE value="refactor JSON.g4 to ObjectJSON.g4 and fix creating duplicate of an array value inside an object" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor JSON.g4 to ObjectJSON.g4 and fix creating duplicate of an array value inside an object" />
+    <MESSAGE value="refactor ObjectJSON.g4 to JSON.g4, and adding JSONArray functionality, JSONArray can be filled with number, boolean, string, and null" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor ObjectJSON.g4 to JSON.g4, and adding JSONArray functionality, JSONArray can be filled with number, boolean, string, and null" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>168</line>
+          <line>199</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>184</line>
+          <line>215</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>181</line>
+          <line>212</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>204</line>
+          <line>235</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>208</line>
+          <line>239</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>212</line>
+          <line>243</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>216</line>
+          <line>247</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>220</line>
+          <line>251</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>223</line>
+          <line>254</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>225</line>
+          <line>256</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>134</line>
+          <line>162</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>151</line>
+          <line>179</line>
           <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java</url>
-          <line>38</line>
+          <line>46</line>
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>73</line>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>103</line>
+          <line>128</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>109</line>
+          <line>137</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>140</line>
+          <line>168</line>
           <properties />
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>146</line>
+          <line>174</line>
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>142</line>
+          <line>170</line>
           <properties />
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>167</line>
+          <line>198</line>
           <properties />
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>189</line>
+          <line>220</line>
           <properties />
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>186</line>
+          <line>217</line>
           <properties />
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>177</line>
+          <line>208</line>
           <properties />
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>179</line>
+          <line>210</line>
           <properties />
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>119</line>
+          <line>147</line>
           <properties />
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>118</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
-          <line>121</line>
+          <line>149</line>
           <properties />
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java</url>
-          <line>26</line>
+          <line>33</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
           <line>34</line>
           <properties />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
-          <line>309</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
-          <line>301</line>
-          <properties />
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
-          <line>317</line>
-          <properties />
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
-          <line>320</line>
-          <properties />
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
-          <line>234</line>
-          <properties />
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
-          <line>241</line>
-          <properties />
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
-          <line>238</line>
-          <properties />
-          <option name="timeStamp" value="119" />
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
           <line>308</line>
           <properties />
-          <option name="timeStamp" value="127" />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
+          <line>300</line>
+          <properties />
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
+          <line>316</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
+          <line>319</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
+          <line>263</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
+          <line>270</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java</url>
+          <line>267</line>
+          <properties />
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
           <line>307</line>
           <properties />
-          <option name="timeStamp" value="128" />
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
           <line>306</line>
           <properties />
-          <option name="timeStamp" value="129" />
+          <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
           <line>305</line>
           <properties />
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java</url>
+          <line>304</line>
+          <properties />
           <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="135" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -830,27 +846,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/Pair.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/JSONPair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/JSONPair.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/ArrayBaseListener.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/ArrayJSON.g4">
       <provider selected="true" editor-type-id="text-editor">
@@ -891,10 +887,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding>
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONBoolean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="457">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="e#943#944#0" expanded="true" />
             <element signature="e#999#1000#0" expanded="true" />
@@ -902,21 +928,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/test.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2895">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        <state relative-caret-position="406">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -925,48 +957,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="197">
+          <caret line="256" selection-start-line="256" selection-end-line="256" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8355#8356#0" expanded="true" />
+            <element signature="e#8429#8430#0" expanded="true" />
+            <element signature="e#8900#8901#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="214">
+          <caret line="319" selection-start-line="319" selection-end-line="319" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding>
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/test.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Executioner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#9536#9537#0" expanded="true" />
+            <element signature="e#9579#9580#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -978,13 +987,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="297" column="42" selection-start-line="297" selection-start-column="42" selection-end-line="297" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9580#9581#0" expanded="true" />
           </folding>
         </state>
       </provider>

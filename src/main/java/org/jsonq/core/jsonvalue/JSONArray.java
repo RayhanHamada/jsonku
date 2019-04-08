@@ -3,8 +3,8 @@ package org.jsonq.core.jsonvalue;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONLexer;
-import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONParser;
+import org.jsonq.core.antlrgenerated.JSONLexer;
+import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
 import org.jsonq.core.exception.JSONArrayIndexOutOfBoundException;
 import org.jsonq.core.listener.BaseListener;
@@ -28,11 +28,21 @@ public class JSONArray extends JSONValue{
         this.value = value;
         this.elements = new ArrayList<>();
 
-        CharStream input = CharStreams.fromString(value);
-        ObjectJSONLexer lexer = new ObjectJSONLexer(input);
-        ObjectJSONParser parser = new ObjectJSONParser(new CommonTokenStream(lexer));
-        parser.addParseListener(new BaseListener(this));
-        parser.array();
+        /*
+         * if the value is not null or not equal to the string "null" then parse it, if not, then don't parse
+         * */
+
+        if (value != null || !value.equals("null"))
+        {
+            CharStream input = CharStreams.fromString(value);
+            JSONLexer lexer = new JSONLexer(input);
+            JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
+            parser.addParseListener(new BaseListener(this));
+            parser.array();
+        }
+
+        if (!BaseListener.canExecuteSomething)
+            System.exit(1);
     }
 
     /*
@@ -47,6 +57,8 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
+        if (this.value == null)
+            return null;
         return elements.get(i);
     }
 
@@ -63,6 +75,11 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
+        if (this.value == null)
+            return null;
+
+
+
         if (elements.get(i) instanceof JSONObject) return (JSONObject) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
@@ -76,6 +93,9 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
+        if (this.value == null)
+            return null;
+
         if (elements.get(i) instanceof JSONArray) return (JSONArray) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
@@ -88,6 +108,9 @@ public class JSONArray extends JSONValue{
         } catch (JSONArrayIndexOutOfBoundException e) {
             e.printStackTrace();
         }
+
+        if (this.value == null)
+            return null;
 
         if (elements.get(i) instanceof JSONNumber) return (JSONNumber) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
@@ -107,6 +130,9 @@ public class JSONArray extends JSONValue{
         } catch (JSONArrayIndexOutOfBoundException e) {
             e.printStackTrace();
         }
+
+        if (this.value == null)
+            return null;
 
         if (elements.get(i) instanceof JSONBoolean) return (JSONBoolean) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
@@ -232,6 +258,9 @@ public class JSONArray extends JSONValue{
 
     public void updateValueString()
     {
+        if (this.value == null || this.value.equals("null"))
+            return;
+
         value = "[";
 
         for (JSONValue v : elements)

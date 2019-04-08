@@ -13,6 +13,8 @@ public class JSONString extends JSONValue {
 
     public String getValue()
     {
+        if (this.value == null)
+            return null;
         return value;
     }
 

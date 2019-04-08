@@ -21,10 +21,14 @@ public class JSONBoolean extends JSONValue{
 
     public String getValue()
     {
+        if (this.value == null)
+            return null;
         return value;
     }
 
-    public boolean getLiteralValue() {
+    public Boolean getLiteralValue() {
+        if (this.value == null)
+            return null;
         return literalValue;
     }
 

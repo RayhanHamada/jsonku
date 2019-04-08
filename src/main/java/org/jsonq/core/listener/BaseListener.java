@@ -279,7 +279,6 @@ public class BaseListener implements JSONListener {
 
         if (listenTo)
         {
-
             if (!inNestedObject && !inNestedArray)
             {
                 arrayScopeDeepCount++;

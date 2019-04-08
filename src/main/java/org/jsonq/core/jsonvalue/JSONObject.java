@@ -3,8 +3,8 @@ package org.jsonq.core.jsonvalue;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONLexer;
-import org.jsonq.core.antlrgenerated.objectgrammar.ObjectJSONParser;
+import org.jsonq.core.antlrgenerated.JSONLexer;
+import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
 import org.jsonq.core.exception.KeyNotFoundException;
 import org.jsonq.core.listener.BaseListener;
@@ -43,12 +43,19 @@ public class JSONObject extends JSONValue {
         this.value = value;
         this.valueMap = new HashMap<>();
 
-        CharStream input = CharStreams.fromString(value);
-        ObjectJSONLexer lexer = new ObjectJSONLexer(input);
-        ObjectJSONParser parser = new ObjectJSONParser(new CommonTokenStream(lexer));
-        parser.addParseListener(new BaseListener(this));
-        parser.objectRoot();
+        /*
+        * if the value is not null or not equal to the string "null" then parse it, if not, then don't parse
+        * */
+        if (this.value != null || this.value != "null")
+        {
+            CharStream input = CharStreams.fromString(value);
+            JSONLexer lexer = new JSONLexer(input);
+            JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
+            parser.addParseListener(new BaseListener(this));
+            parser.objectRoot();
+        }
 
+        // if there's any error from BaseListener, then just exit.
         if (!BaseListener.canExecuteSomething) System.exit(1);
     }
 
@@ -59,6 +66,12 @@ public class JSONObject extends JSONValue {
     public JSONObject getJSONObjectOf(String key) {
         if (valueMap.containsKey(key))
         {
+            /* if the valueMap.get(key) is an instance of JSONNull, then just return new JSONObject with with null string argument.
+            *
+            * */
+            if (valueMap.get(key) instanceof JSONNull)
+                return new JSONObject(null);
+
             if (valueMap.get(key) instanceof JSONObject) return (JSONObject) valueMap.get(key);
             throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
         }
@@ -70,6 +83,12 @@ public class JSONObject extends JSONValue {
     {
         if (valueMap.containsKey(key))
         {
+            /* if the valueMap.get(key) is an instance of JSONNull, then just return new JSONArray with with null string argument.
+             * */
+
+            if (valueMap.get(key) instanceof JSONNull)
+                return new JSONArray(null);
+
             if (valueMap.get(key) instanceof JSONArray) return (JSONArray) valueMap.get(key);
             throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
         }
@@ -81,6 +100,9 @@ public class JSONObject extends JSONValue {
     {
         if (valueMap.containsKey(key))
         {
+            if (valueMap.get(key) instanceof JSONNull)
+                return new JSONString(null);
+
             if (valueMap.get(key) instanceof JSONString) return (JSONString) valueMap.get(key);
             throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
         }
@@ -92,6 +114,9 @@ public class JSONObject extends JSONValue {
     {
         if (valueMap.containsKey(key))
         {
+            if (valueMap.get(key) instanceof JSONNull)
+                return new JSONBoolean(null);
+
             if (valueMap.get(key) instanceof JSONBoolean) return (JSONBoolean) valueMap.get(key);
             throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
         }
@@ -103,6 +128,9 @@ public class JSONObject extends JSONValue {
     {
         if (valueMap.containsKey(key))
         {
+            if (valueMap.get(key) instanceof JSONNull)
+                return new JSONNumber(null);
+
             if (valueMap.get(key) instanceof JSONNumber) return (JSONNumber) valueMap.get(key);
             throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
         }
@@ -165,6 +193,9 @@ public class JSONObject extends JSONValue {
      * */
     public void updateValueString()
     {
+        if (this.value == null || this.value.equals("null"))
+            return;
+
         ArrayList<String> vmapString = new ArrayList<>(valueMap.keySet());
         value = "{\n" + duplicates;
         for (String k : vmapString)

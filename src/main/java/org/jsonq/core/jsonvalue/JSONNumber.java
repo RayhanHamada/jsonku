@@ -12,21 +12,29 @@ public class JSONNumber extends JSONValue {
     }
 
     public String getValue() {
+        if (this.value == null)
+            return null;
         return value;
     }
 
     public Integer asInteger()
     {
+        if (this.value == null)
+            return null;
         return Integer.parseInt(value);
     }
 
     public Float asFloat()
     {
+        if (this.value == null)
+            return null;
         return Float.parseFloat((value.endsWith("f") || value.endsWith("F"))? value : value + "f");
     }
 
     public Long asLong()
     {
+        if (this.value == null)
+            return null;
         return Long.parseLong(value);
     }
 

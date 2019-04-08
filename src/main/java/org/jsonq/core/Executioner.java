@@ -16,18 +16,26 @@ public class Executioner {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(args[0])));
             String temp, toParse = "";
 
+            /*
+            * read every line of the json file
+            * */
             while ((temp = bufferedReader.readLine()) != null)
             {
                 toParse += temp;
             }
 
+            /*
+            * if the json string starts with '{' or a "null", then it will be parsed as JSONObject, if it start with '['
+            * then it would be parsed as JSONArray
+            * */
 
-            if (toParse.startsWith("{"))
+            if (toParse.startsWith("{") || toParse.matches("null"))
             {
                 JSONObject obj = new JSONObject(toParse);
                 System.out.println(obj.getValue());
-                System.out.println(obj.getJSONArrayOf("array").getValue());
-                System.out.println(obj.getJSONArrayOf("array").getStringAt(8).getValue());
+                System.out.println();
+                System.out.println(obj.getJSONArrayOf("arr").getValue());
+
             }
             else if (toParse.startsWith("["))
             {
