@@ -34,7 +34,7 @@ public class Executioner {
                 JSONObject obj = new JSONObject(toParse);
                 System.out.println(obj.getValue());
                 System.out.println();
-                System.out.println(obj.getJSONArrayOf("arr").getValue());
+                System.out.println(obj.getJSONArrayOf("arr").getNumberAt(3).asInteger());
 
             }
             else if (toParse.startsWith("["))

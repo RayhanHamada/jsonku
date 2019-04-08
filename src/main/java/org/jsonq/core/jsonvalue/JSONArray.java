@@ -75,12 +75,12 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
-        if (this.value == null)
-            return null;
+        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+            return new JSONObject(null);
 
+        if (elements.get(i) instanceof JSONObject)
+            return (JSONObject) elements.get(i);
 
-
-        if (elements.get(i) instanceof JSONObject) return (JSONObject) elements.get(i);
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 
@@ -93,10 +93,12 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
-        if (this.value == null)
-            return null;
+        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+            return new JSONArray(null);
 
-        if (elements.get(i) instanceof JSONArray) return (JSONArray) elements.get(i);
+        if (elements.get(i) instanceof JSONArray)
+            return (JSONArray) elements.get(i);
+
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 
@@ -109,16 +111,20 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
-        if (this.value == null)
-            return null;
+        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+            return new JSONNumber(null);
 
-        if (elements.get(i) instanceof JSONNumber) return (JSONNumber) elements.get(i);
+        if (elements.get(i) instanceof JSONNumber)
+            return (JSONNumber) elements.get(i);
+
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 
     public JSONString getStringAt(int i)
     {
-        if (elements.get(i) instanceof JSONString) return (JSONString) elements.get(i);
+        if (elements.get(i) instanceof JSONString)
+            return (JSONString) elements.get(i);
+
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 
@@ -131,10 +137,12 @@ public class JSONArray extends JSONValue{
             e.printStackTrace();
         }
 
-        if (this.value == null)
-            return null;
+        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+            return new JSONBoolean(null);
 
-        if (elements.get(i) instanceof JSONBoolean) return (JSONBoolean) elements.get(i);
+        if (elements.get(i) instanceof JSONBoolean)
+            return (JSONBoolean) elements.get(i);
+
         throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
     }
 

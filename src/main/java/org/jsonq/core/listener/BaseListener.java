@@ -149,11 +149,17 @@ public class BaseListener implements JSONListener {
 
         if (listenTo)
         {
-            currentObject.getValueMap().put(tempKey, new JSONNull());
+            if (!inNestedObject && !inNestedArray)
+            {
+                currentObject.getValueMap().put(tempKey, new JSONNull());
+            }
         }
         else
         {
-            currentArray.getElements().add(new JSONNull());
+            if (!inNestedObject && !inNestedArray)
+            {
+                currentArray.getElements().add(new JSONNull());
+            }
         }
     }
 

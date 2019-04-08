@@ -19,7 +19,7 @@ public class JSONNumber extends JSONValue {
 
     public Integer asInteger()
     {
-        if (this.value == null)
+        if (this.value == null || this.value.equals("null"))
             return null;
         return Integer.parseInt(value);
     }
