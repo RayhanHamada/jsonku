@@ -32,13 +32,13 @@ public class JSONArray extends JSONValue{
          * if the value is not null or not equal to the string "null" then parse it, if not, then don't parse
          * */
 
-        if (value != null || !value.equals("null"))
+        if (value != null || !value.equals("null") || !value.equals("[]"))
         {
             CharStream input = CharStreams.fromString(value);
             JSONLexer lexer = new JSONLexer(input);
             JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
             parser.addParseListener(new BaseListener(this));
-            parser.array();
+            parser.arrayRoot();
         }
 
         if (!BaseListener.canExecuteSomething)

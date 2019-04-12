@@ -21,20 +21,20 @@ public class JSONParser extends Parser {
 		BOOLEAN_LITERAL=10, NULL_LITERAL=11, IDENTIFIER=12, DECIMAL_LITERAL=13, 
 		FLOAT_LITERAL=14, STRING_LITERAL=15;
 	public static final int
-		RULE_comments = 0, RULE_objectRoot = 1, RULE_pair = 2, RULE_key = 3, RULE_value = 4, 
-		RULE_stringLiteral = 5, RULE_nullLiteral = 6, RULE_booleanLiteral = 7, 
-		RULE_numberLiteral = 8, RULE_object = 9, RULE_array = 10;
+		RULE_comments = 0, RULE_objectRoot = 1, RULE_arrayRoot = 2, RULE_pair = 3, 
+		RULE_key = 4, RULE_value = 5, RULE_stringLiteral = 6, RULE_nullLiteral = 7, 
+		RULE_booleanLiteral = 8, RULE_numberLiteral = 9, RULE_object = 10, RULE_array = 11;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"comments", "objectRoot", "pair", "key", "value", "stringLiteral", "nullLiteral", 
-			"booleanLiteral", "numberLiteral", "object", "array"
+			"comments", "objectRoot", "arrayRoot", "pair", "key", "value", "stringLiteral", 
+			"nullLiteral", "booleanLiteral", "numberLiteral", "object", "array"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'/*'", "'*/'", "'{'", "','", "'}'", "':'", "'['", "']'", null, 
+			null, "'/*'", "'*/'", "'{'", "','", "'}'", "'['", "']'", "':'", null, 
 			null, "'null'"
 		};
 	}
@@ -118,25 +118,25 @@ public class JSONParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22);
+			setState(24);
 			match(T__0);
-			setState(26);
+			setState(28);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
 			while ( _alt!=1 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1+1 ) {
 					{
 					{
-					setState(23);
+					setState(25);
 					matchWildcard();
 					}
 					} 
 				}
-				setState(28);
+				setState(30);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
 			}
-			setState(29);
+			setState(31);
 			match(T__1);
 			}
 		}
@@ -178,57 +178,132 @@ public class JSONParser extends Parser {
 		enterRule(_localctx, 2, RULE_objectRoot);
 		int _la;
 		try {
-			setState(47);
+			setState(49);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__2:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(31);
+				setState(33);
 				match(T__2);
-				setState(42);
+				setState(44);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==STRING_LITERAL) {
 					{
 					{
-					setState(32);
+					setState(34);
 					pair();
-					setState(37);
+					setState(39);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 					while (_la==T__3) {
 						{
 						{
-						setState(33);
+						setState(35);
 						match(T__3);
-						setState(34);
+						setState(36);
 						pair();
 						}
 						}
-						setState(39);
+						setState(41);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 					}
 					}
 					}
-					setState(44);
+					setState(46);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(45);
+				setState(47);
 				match(T__4);
 				}
 				break;
 			case NULL_LITERAL:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(46);
+				setState(48);
 				match(NULL_LITERAL);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ArrayRootContext extends ParserRuleContext {
+		public List<ValueContext> value() {
+			return getRuleContexts(ValueContext.class);
+		}
+		public ValueContext value(int i) {
+			return getRuleContext(ValueContext.class,i);
+		}
+		public ArrayRootContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_arrayRoot; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).enterArrayRoot(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof JSONListener ) ((JSONListener)listener).exitArrayRoot(this);
+		}
+	}
+
+	public final ArrayRootContext arrayRoot() throws RecognitionException {
+		ArrayRootContext _localctx = new ArrayRootContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_arrayRoot);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(51);
+			match(T__5);
+			setState(62);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << BOOLEAN_LITERAL) | (1L << NULL_LITERAL) | (1L << DECIMAL_LITERAL) | (1L << FLOAT_LITERAL) | (1L << STRING_LITERAL))) != 0)) {
+				{
+				{
+				setState(52);
+				value();
+				setState(57);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==T__3) {
+					{
+					{
+					setState(53);
+					match(T__3);
+					setState(54);
+					value();
+					}
+					}
+					setState(59);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				}
+				}
+				setState(64);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(65);
+			match(T__6);
 			}
 		}
 		catch (RecognitionException re) {
@@ -265,15 +340,15 @@ public class JSONParser extends Parser {
 
 	public final PairContext pair() throws RecognitionException {
 		PairContext _localctx = new PairContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_pair);
+		enterRule(_localctx, 6, RULE_pair);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(67);
 			key();
-			setState(50);
-			match(T__5);
-			setState(51);
+			setState(68);
+			match(T__7);
+			setState(69);
 			value();
 			}
 		}
@@ -306,11 +381,11 @@ public class JSONParser extends Parser {
 
 	public final KeyContext key() throws RecognitionException {
 		KeyContext _localctx = new KeyContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_key);
+		enterRule(_localctx, 8, RULE_key);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(53);
+			setState(71);
 			match(STRING_LITERAL);
 			}
 		}
@@ -360,29 +435,29 @@ public class JSONParser extends Parser {
 
 	public final ValueContext value() throws RecognitionException {
 		ValueContext _localctx = new ValueContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_value);
+		enterRule(_localctx, 10, RULE_value);
 		try {
-			setState(61);
+			setState(79);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOLEAN_LITERAL:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(55);
+				setState(73);
 				booleanLiteral();
 				}
 				break;
 			case STRING_LITERAL:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(56);
+				setState(74);
 				stringLiteral();
 				}
 				break;
 			case NULL_LITERAL:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(57);
+				setState(75);
 				nullLiteral();
 				}
 				break;
@@ -390,21 +465,21 @@ public class JSONParser extends Parser {
 			case FLOAT_LITERAL:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(58);
+				setState(76);
 				numberLiteral();
 				}
 				break;
-			case T__6:
+			case T__5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(59);
+				setState(77);
 				array();
 				}
 				break;
 			case T__2:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(60);
+				setState(78);
 				object();
 				}
 				break;
@@ -441,11 +516,11 @@ public class JSONParser extends Parser {
 
 	public final StringLiteralContext stringLiteral() throws RecognitionException {
 		StringLiteralContext _localctx = new StringLiteralContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_stringLiteral);
+		enterRule(_localctx, 12, RULE_stringLiteral);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(63);
+			setState(81);
 			match(STRING_LITERAL);
 			}
 		}
@@ -478,11 +553,11 @@ public class JSONParser extends Parser {
 
 	public final NullLiteralContext nullLiteral() throws RecognitionException {
 		NullLiteralContext _localctx = new NullLiteralContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_nullLiteral);
+		enterRule(_localctx, 14, RULE_nullLiteral);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(65);
+			setState(83);
 			match(NULL_LITERAL);
 			}
 		}
@@ -515,11 +590,11 @@ public class JSONParser extends Parser {
 
 	public final BooleanLiteralContext booleanLiteral() throws RecognitionException {
 		BooleanLiteralContext _localctx = new BooleanLiteralContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_booleanLiteral);
+		enterRule(_localctx, 16, RULE_booleanLiteral);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(67);
+			setState(85);
 			match(BOOLEAN_LITERAL);
 			}
 		}
@@ -553,12 +628,12 @@ public class JSONParser extends Parser {
 
 	public final NumberLiteralContext numberLiteral() throws RecognitionException {
 		NumberLiteralContext _localctx = new NumberLiteralContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_numberLiteral);
+		enterRule(_localctx, 18, RULE_numberLiteral);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(69);
+			setState(87);
 			_la = _input.LA(1);
 			if ( !(_la==DECIMAL_LITERAL || _la==FLOAT_LITERAL) ) {
 			_errHandler.recoverInline(this);
@@ -604,44 +679,44 @@ public class JSONParser extends Parser {
 
 	public final ObjectContext object() throws RecognitionException {
 		ObjectContext _localctx = new ObjectContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_object);
+		enterRule(_localctx, 20, RULE_object);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(71);
+			setState(89);
 			match(T__2);
-			setState(82);
+			setState(100);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==STRING_LITERAL) {
 				{
 				{
-				setState(72);
+				setState(90);
 				pair();
-				setState(77);
+				setState(95);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__3) {
 					{
 					{
-					setState(73);
+					setState(91);
 					match(T__3);
-					setState(74);
+					setState(92);
 					pair();
 					}
 					}
-					setState(79);
+					setState(97);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 				}
-				setState(84);
+				setState(102);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(85);
+			setState(103);
 			match(T__4);
 			}
 		}
@@ -679,45 +754,45 @@ public class JSONParser extends Parser {
 
 	public final ArrayContext array() throws RecognitionException {
 		ArrayContext _localctx = new ArrayContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_array);
+		enterRule(_localctx, 22, RULE_array);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87);
-			match(T__6);
-			setState(98);
+			setState(105);
+			match(T__5);
+			setState(116);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__6) | (1L << BOOLEAN_LITERAL) | (1L << NULL_LITERAL) | (1L << DECIMAL_LITERAL) | (1L << FLOAT_LITERAL) | (1L << STRING_LITERAL))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << BOOLEAN_LITERAL) | (1L << NULL_LITERAL) | (1L << DECIMAL_LITERAL) | (1L << FLOAT_LITERAL) | (1L << STRING_LITERAL))) != 0)) {
 				{
 				{
-				setState(88);
+				setState(106);
 				value();
-				setState(93);
+				setState(111);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__3) {
 					{
 					{
-					setState(89);
+					setState(107);
 					match(T__3);
-					setState(90);
+					setState(108);
 					value();
 					}
 					}
-					setState(95);
+					setState(113);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 				}
-				setState(100);
+				setState(118);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(101);
-			match(T__7);
+			setState(119);
+			match(T__6);
 			}
 		}
 		catch (RecognitionException re) {
@@ -732,32 +807,36 @@ public class JSONParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21j\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21|\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
-		"\f\t\f\3\2\3\2\7\2\33\n\2\f\2\16\2\36\13\2\3\2\3\2\3\3\3\3\3\3\3\3\7\3"+
-		"&\n\3\f\3\16\3)\13\3\7\3+\n\3\f\3\16\3.\13\3\3\3\3\3\5\3\62\n\3\3\4\3"+
-		"\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\5\6@\n\6\3\7\3\7\3\b\3\b\3"+
-		"\t\3\t\3\n\3\n\3\13\3\13\3\13\3\13\7\13N\n\13\f\13\16\13Q\13\13\7\13S"+
-		"\n\13\f\13\16\13V\13\13\3\13\3\13\3\f\3\f\3\f\3\f\7\f^\n\f\f\f\16\fa\13"+
-		"\f\7\fc\n\f\f\f\16\ff\13\f\3\f\3\f\3\f\3\34\2\r\2\4\6\b\n\f\16\20\22\24"+
-		"\26\2\3\3\2\17\20\2k\2\30\3\2\2\2\4\61\3\2\2\2\6\63\3\2\2\2\b\67\3\2\2"+
-		"\2\n?\3\2\2\2\fA\3\2\2\2\16C\3\2\2\2\20E\3\2\2\2\22G\3\2\2\2\24I\3\2\2"+
-		"\2\26Y\3\2\2\2\30\34\7\3\2\2\31\33\13\2\2\2\32\31\3\2\2\2\33\36\3\2\2"+
-		"\2\34\35\3\2\2\2\34\32\3\2\2\2\35\37\3\2\2\2\36\34\3\2\2\2\37 \7\4\2\2"+
-		" \3\3\2\2\2!,\7\5\2\2\"\'\5\6\4\2#$\7\6\2\2$&\5\6\4\2%#\3\2\2\2&)\3\2"+
-		"\2\2\'%\3\2\2\2\'(\3\2\2\2(+\3\2\2\2)\'\3\2\2\2*\"\3\2\2\2+.\3\2\2\2,"+
-		"*\3\2\2\2,-\3\2\2\2-/\3\2\2\2.,\3\2\2\2/\62\7\7\2\2\60\62\7\r\2\2\61!"+
-		"\3\2\2\2\61\60\3\2\2\2\62\5\3\2\2\2\63\64\5\b\5\2\64\65\7\b\2\2\65\66"+
-		"\5\n\6\2\66\7\3\2\2\2\678\7\21\2\28\t\3\2\2\29@\5\20\t\2:@\5\f\7\2;@\5"+
-		"\16\b\2<@\5\22\n\2=@\5\26\f\2>@\5\24\13\2?9\3\2\2\2?:\3\2\2\2?;\3\2\2"+
-		"\2?<\3\2\2\2?=\3\2\2\2?>\3\2\2\2@\13\3\2\2\2AB\7\21\2\2B\r\3\2\2\2CD\7"+
-		"\r\2\2D\17\3\2\2\2EF\7\f\2\2F\21\3\2\2\2GH\t\2\2\2H\23\3\2\2\2IT\7\5\2"+
-		"\2JO\5\6\4\2KL\7\6\2\2LN\5\6\4\2MK\3\2\2\2NQ\3\2\2\2OM\3\2\2\2OP\3\2\2"+
-		"\2PS\3\2\2\2QO\3\2\2\2RJ\3\2\2\2SV\3\2\2\2TR\3\2\2\2TU\3\2\2\2UW\3\2\2"+
-		"\2VT\3\2\2\2WX\7\7\2\2X\25\3\2\2\2Yd\7\t\2\2Z_\5\n\6\2[\\\7\6\2\2\\^\5"+
-		"\n\6\2][\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2\2`c\3\2\2\2a_\3\2\2\2bZ\3"+
-		"\2\2\2cf\3\2\2\2db\3\2\2\2de\3\2\2\2eg\3\2\2\2fd\3\2\2\2gh\7\n\2\2h\27"+
-		"\3\2\2\2\13\34\',\61?OT_d";
+		"\f\t\f\4\r\t\r\3\2\3\2\7\2\35\n\2\f\2\16\2 \13\2\3\2\3\2\3\3\3\3\3\3\3"+
+		"\3\7\3(\n\3\f\3\16\3+\13\3\7\3-\n\3\f\3\16\3\60\13\3\3\3\3\3\5\3\64\n"+
+		"\3\3\4\3\4\3\4\3\4\7\4:\n\4\f\4\16\4=\13\4\7\4?\n\4\f\4\16\4B\13\4\3\4"+
+		"\3\4\3\5\3\5\3\5\3\5\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7R\n\7\3\b\3\b"+
+		"\3\t\3\t\3\n\3\n\3\13\3\13\3\f\3\f\3\f\3\f\7\f`\n\f\f\f\16\fc\13\f\7\f"+
+		"e\n\f\f\f\16\fh\13\f\3\f\3\f\3\r\3\r\3\r\3\r\7\rp\n\r\f\r\16\rs\13\r\7"+
+		"\ru\n\r\f\r\16\rx\13\r\3\r\3\r\3\r\3\36\2\16\2\4\6\b\n\f\16\20\22\24\26"+
+		"\30\2\3\3\2\17\20\2~\2\32\3\2\2\2\4\63\3\2\2\2\6\65\3\2\2\2\bE\3\2\2\2"+
+		"\nI\3\2\2\2\fQ\3\2\2\2\16S\3\2\2\2\20U\3\2\2\2\22W\3\2\2\2\24Y\3\2\2\2"+
+		"\26[\3\2\2\2\30k\3\2\2\2\32\36\7\3\2\2\33\35\13\2\2\2\34\33\3\2\2\2\35"+
+		" \3\2\2\2\36\37\3\2\2\2\36\34\3\2\2\2\37!\3\2\2\2 \36\3\2\2\2!\"\7\4\2"+
+		"\2\"\3\3\2\2\2#.\7\5\2\2$)\5\b\5\2%&\7\6\2\2&(\5\b\5\2\'%\3\2\2\2(+\3"+
+		"\2\2\2)\'\3\2\2\2)*\3\2\2\2*-\3\2\2\2+)\3\2\2\2,$\3\2\2\2-\60\3\2\2\2"+
+		".,\3\2\2\2./\3\2\2\2/\61\3\2\2\2\60.\3\2\2\2\61\64\7\7\2\2\62\64\7\r\2"+
+		"\2\63#\3\2\2\2\63\62\3\2\2\2\64\5\3\2\2\2\65@\7\b\2\2\66;\5\f\7\2\678"+
+		"\7\6\2\28:\5\f\7\29\67\3\2\2\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2<?\3\2\2\2"+
+		"=;\3\2\2\2>\66\3\2\2\2?B\3\2\2\2@>\3\2\2\2@A\3\2\2\2AC\3\2\2\2B@\3\2\2"+
+		"\2CD\7\t\2\2D\7\3\2\2\2EF\5\n\6\2FG\7\n\2\2GH\5\f\7\2H\t\3\2\2\2IJ\7\21"+
+		"\2\2J\13\3\2\2\2KR\5\22\n\2LR\5\16\b\2MR\5\20\t\2NR\5\24\13\2OR\5\30\r"+
+		"\2PR\5\26\f\2QK\3\2\2\2QL\3\2\2\2QM\3\2\2\2QN\3\2\2\2QO\3\2\2\2QP\3\2"+
+		"\2\2R\r\3\2\2\2ST\7\21\2\2T\17\3\2\2\2UV\7\r\2\2V\21\3\2\2\2WX\7\f\2\2"+
+		"X\23\3\2\2\2YZ\t\2\2\2Z\25\3\2\2\2[f\7\5\2\2\\a\5\b\5\2]^\7\6\2\2^`\5"+
+		"\b\5\2_]\3\2\2\2`c\3\2\2\2a_\3\2\2\2ab\3\2\2\2be\3\2\2\2ca\3\2\2\2d\\"+
+		"\3\2\2\2eh\3\2\2\2fd\3\2\2\2fg\3\2\2\2gi\3\2\2\2hf\3\2\2\2ij\7\7\2\2j"+
+		"\27\3\2\2\2kv\7\b\2\2lq\5\f\7\2mn\7\6\2\2np\5\f\7\2om\3\2\2\2ps\3\2\2"+
+		"\2qo\3\2\2\2qr\3\2\2\2ru\3\2\2\2sq\3\2\2\2tl\3\2\2\2ux\3\2\2\2vt\3\2\2"+
+		"\2vw\3\2\2\2wy\3\2\2\2xv\3\2\2\2yz\7\t\2\2z\31\3\2\2\2\r\36).\63;@Qaf"+
+		"qv";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

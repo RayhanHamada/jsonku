@@ -49,6 +49,10 @@ objectRoot
     | NULL_LITERAL
     ;
 
+arrayRoot
+    : '[' (value (',' value)*)* ']'
+    ;
+
 pair
     : key ':' value
     ;

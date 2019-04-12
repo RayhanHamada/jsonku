@@ -33,8 +33,10 @@ public class Executioner {
             {
                 JSONObject obj = new JSONObject(toParse);
                 System.out.println(obj.getValue());
+
+                System.out.println(obj.getJSONArrayOf("track").getArrayAt(0).getArrayAt(0).getArrayAt(0).getValue());
                 System.out.println();
-                System.out.println(obj.getJSONArrayOf("arr").getNumberAt(3).asInteger());
+                ;
 
             }
             else if (toParse.startsWith("["))
@@ -42,7 +44,7 @@ public class Executioner {
                 JSONArray arr = new JSONArray(toParse);
             }
 
-            //pro
+            //masalah sekarang : selalu error saat parsing array di dalam array
 
 
         }

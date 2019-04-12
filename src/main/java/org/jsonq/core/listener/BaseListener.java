@@ -53,6 +53,14 @@ public class BaseListener implements JSONListener {
 
     }
 
+    public void enterArrayRoot(JSONParser.ArrayRootContext ctx) {
+
+    }
+
+    public void exitArrayRoot(JSONParser.ArrayRootContext ctx) {
+
+    }
+
     public void enterPair(JSONParser.PairContext ctx) {
 
     }
@@ -236,84 +244,62 @@ public class BaseListener implements JSONListener {
 
         if (listenTo)
         {
-            if (!inNestedArray && !inNestedObject)
-            {
-                inNestedObject = true;
-                objectScopeDeepCount++;
-            }
+            inNestedObject = true;
+            objectScopeDeepCount++;
         }
         else
         {
-
+            inNestedObject = true;
+            objectScopeDeepCount++;
         }
     }
 
     public void exitObject(JSONParser.ObjectContext ctx) {
 
-        if (listenTo)
-        {
-            objectScopeDeepCount--;
+        objectScopeDeepCount--;
 
-            if (objectScopeDeepCount == 0)
+        if (objectScopeDeepCount == 0 && arrayScopeDeepCount == 0)
+        {
+            inNestedObject = false;
+            int a = ctx.start.getStartIndex();
+            int b = ctx.stop.getStopIndex();
+            Interval interval = new Interval(a, b);
+            CharStream input = ctx.start.getInputStream();
+
+            /*
+             * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
+             * to duplicatesMap, and removed from the valueMap.
+             **/
+            if (currentObject.getValueMap().containsKey(tempKey))
             {
-                inNestedObject = false;
-                int a = ctx.start.getStartIndex();
-                int b = ctx.stop.getStopIndex();
-                Interval interval = new Interval(a, b);
-                CharStream input = ctx.start.getInputStream();
-
-                /*
-                 * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
-                 * to duplicatesMap, and removed from the valueMap.
-                 **/
-                if (currentObject.getValueMap().containsKey(tempKey))
-                {
-                    currentObject.swapToDuplicates(tempKey);
-                }
-
-                currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
+                currentObject.swapToDuplicates(tempKey);
             }
-        }
-        else
-        {
 
+            currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
         }
 
     }
 
     public void enterArray(JSONParser.ArrayContext ctx) {
 
-        if (listenTo)
-        {
-            if (!inNestedObject && !inNestedArray)
-            {
-                arrayScopeDeepCount++;
-                inNestedArray = true;
-            }
-
-//            arrayScopeDeepCount++;
-//            inNestedArray = true;
-        }
-        else
-        {
-
-        }
+        arrayScopeDeepCount++;
+        inNestedArray = true;
     }
 
     public void exitArray(JSONParser.ArrayContext ctx) {
 
-        if (listenTo)
+        arrayScopeDeepCount--;
+
+        if (arrayScopeDeepCount == 0 && objectScopeDeepCount == 0)
         {
-            arrayScopeDeepCount--;
+            inNestedArray = false;
+            int a = ctx.start.getStartIndex();
+            int b = ctx.stop.getStopIndex();
+            Interval interval = new Interval(a, b);
+            CharStream input = ctx.start.getInputStream();
 
-            if (arrayScopeDeepCount == 0)
+            if (listenTo)
             {
-                inNestedArray = false;
-                int a = ctx.start.getStartIndex();
-                int b = ctx.stop.getStopIndex();
-                Interval interval = new Interval(a, b);
-                CharStream input = ctx.start.getInputStream();
-
                 /*
                  * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
                  * to duplicatesMap, and removed from the valueMap.
@@ -325,10 +311,20 @@ public class BaseListener implements JSONListener {
 
                 currentObject.getValueMap().put(tempKey, new JSONArray(input.getText(interval)));
             }
-        }
-        else
-        {
-
+            else
+            {
+                /*
+                * if the array is empty, save the string representation and don't parse it
+                * */
+                if (input.getText(interval).equals("[]"))
+                {
+                    currentArray.getElements().add(new JSONArray());
+                }
+                else
+                {
+                    currentArray.getElements().add(new JSONArray(input.getText(interval)));
+                }
+            }
         }
     }
 
