@@ -1,4 +1,4 @@
-package org.jsonq.core;
+package org.jsonq.tester;
 
 import org.jsonq.core.jsonvalue.JSONArray;
 import org.jsonq.core.jsonvalue.JSONObject;
@@ -7,12 +7,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class Executioner {
+public class Tester {
 
     public static void main(String... args) throws Exception {
 
         if (args.length == 1) {
 
+            /*
+            *  reader for the json file
+            * */
             BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(args[0])));
             String temp, toParse = "";
 
@@ -34,19 +37,13 @@ public class Executioner {
                 JSONObject obj = new JSONObject(toParse);
                 System.out.println(obj.getValue());
 
-                System.out.println(obj.getJSONArrayOf("track").getArrayAt(0).getArrayAt(0).getArrayAt(0).getValue());
-                System.out.println();
-                ;
 
             }
             else if (toParse.startsWith("["))
             {
                 JSONArray arr = new JSONArray(toParse);
+                System.out.println(arr.getStringAt(0).getValue());
             }
-
-            //masalah sekarang : selalu error saat parsing array di dalam array
-
-
         }
         else
         {

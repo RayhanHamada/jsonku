@@ -4,6 +4,6 @@ public class JSONArrayIndexOutOfBoundException extends RuntimeException {
 
     public JSONArrayIndexOutOfBoundException()
     {
-        super("Index greater than the size of the array");
+        super("Index greater than or equal to the size of the array");
     }
 }

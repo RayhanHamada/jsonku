@@ -242,16 +242,8 @@ public class BaseListener implements JSONListener {
 
     public void enterObject(JSONParser.ObjectContext ctx) {
 
-        if (listenTo)
-        {
-            inNestedObject = true;
-            objectScopeDeepCount++;
-        }
-        else
-        {
-            inNestedObject = true;
-            objectScopeDeepCount++;
-        }
+        inNestedObject = true;
+        objectScopeDeepCount++;
     }
 
     public void exitObject(JSONParser.ObjectContext ctx) {
@@ -266,16 +258,23 @@ public class BaseListener implements JSONListener {
             Interval interval = new Interval(a, b);
             CharStream input = ctx.start.getInputStream();
 
-            /*
-             * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
-             * to duplicatesMap, and removed from the valueMap.
-             **/
-            if (currentObject.getValueMap().containsKey(tempKey))
+            if (listenTo)
             {
-                currentObject.swapToDuplicates(tempKey);
-            }
+                /*
+                 * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
+                 * to duplicatesMap, and removed from the valueMap.
+                 **/
+                if (currentObject.getValueMap().containsKey(tempKey))
+                {
+                    currentObject.swapToDuplicates(tempKey);
+                }
 
-            currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
+                currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
+            }
+            else
+            {
+                currentArray.getElements().add(new JSONObject(input.getText(interval)));
+            }
         }
 
     }
