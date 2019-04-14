@@ -13,9 +13,14 @@ public class JSONString extends JSONValue {
 
     public String getValue()
     {
-        if (this.value == null)
-            return null;
+        if (this.value == null) return null;
         return value;
+    }
+
+    public String getLiteralValue()
+    {
+        if (this.value == null) return null;
+        return value.substring(1, value.length()-1);
     }
 
     @Override

@@ -228,25 +228,52 @@ public class JSONArray extends JSONValue{
         return (JSONArray) elements.get(elements.size()-1);
     }
 
-    public JSONNumber addNumber(JSONNumber number)
+    public void addNumber(JSONNumber number)
     {
         elements.add(number);
         updateValueString();
-        return (JSONNumber) elements.get(elements.size()-1);
     }
 
-    public JSONString addString(JSONString string)
+    public void addNumber(int n)
+    {
+        elements.add(new JSONNumber(Integer.toString(n)));
+        updateValueString();
+    }
+
+    public void addNumber(float n)
+    {
+        elements.add(new JSONNumber(Float.toString(n)));
+        updateValueString();
+    }
+
+    public void addNumber(long n)
+    {
+        elements.add(new JSONNumber(Long.toString(n)));
+        updateValueString();
+    }
+
+    public void addString(JSONString string)
     {
         elements.add(string);
         updateValueString();
-        return (JSONString) elements.get(elements.size()-1);
     }
 
-    public JSONBoolean addBoolean(JSONBoolean bool)
+    public void addString(String s)
+    {
+        elements.add(new JSONString("\"" + s + "\""));
+        updateValueString();
+    }
+
+    public void addBoolean(JSONBoolean bool)
     {
         elements.add(bool);
         updateValueString();
-        return (JSONBoolean) elements.get(elements.size()-1);
+    }
+
+    public void addBoolean(boolean bool)
+    {
+        elements.add(new JSONBoolean(Boolean.toString(bool)));
+        updateValueString();
     }
 
     /*
