@@ -44,11 +44,21 @@ public class JSONFile extends File {
         else if (stringRepr.startsWith("["))
         {
             jsonArray = new JSONArray(stringRepr);
+            isObject = false;
         }
     }
 
     public String getStringRepr()
     {
+        if (isObject)
+        {
+            stringRepr = jsonObject.getValue();
+        }
+        else
+        {
+            stringRepr = jsonArray.getValue();
+        }
+
         return stringRepr;
     }
 

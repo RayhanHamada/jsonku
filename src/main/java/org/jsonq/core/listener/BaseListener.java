@@ -75,28 +75,40 @@ public class BaseListener implements JSONListener {
 
     public void exitKey(JSONParser.KeyContext ctx) {
 
-        if (listenTo)
+
+        if (!inNestedArray && !inNestedObject)
         {
-            if (!inNestedObject)
-            {
-                int a = ctx.start.getStartIndex();
-                int b = ctx.stop.getStopIndex();
-                Interval interval = new Interval(a, b);
-                CharStream input = ctx.start.getInputStream();
-                tempKey = input.getText(interval).replaceAll("\"", "");
-            }
+            int a = ctx.start.getStartIndex();
+            int b = ctx.stop.getStopIndex();
+            Interval interval = new Interval(a, b);
+            CharStream input = ctx.start.getInputStream();
+            tempKey = input.getText(interval).replaceAll("\"", "");
+
         }
-        else
-        {
-            if (!inNestedArray)
-            {
-                int a = ctx.start.getStartIndex();
-                int b = ctx.stop.getStopIndex();
-                Interval interval = new Interval(a, b);
-                CharStream input = ctx.start.getInputStream();
-                tempKey = input.getText(interval).replaceAll("\"", "");
-            }
-        }
+
+
+//        if (listenTo)
+//        {
+//            if (!inNestedObject)
+//            {
+//                int a = ctx.start.getStartIndex();
+//                int b = ctx.stop.getStopIndex();
+//                Interval interval = new Interval(a, b);
+//                CharStream input = ctx.start.getInputStream();
+//                tempKey = input.getText(interval).replaceAll("\"", "");
+//            }
+//        }
+//        else
+//        {
+//            if (!inNestedArray)
+//            {
+//                int a = ctx.start.getStartIndex();
+//                int b = ctx.stop.getStopIndex();
+//                Interval interval = new Interval(a, b);
+//                CharStream input = ctx.start.getInputStream();
+//                tempKey = input.getText(interval).replaceAll("\"", "");
+//            }
+//        }
     }
 
     public void enterValue(JSONParser.ValueContext ctx) {
@@ -253,44 +265,6 @@ public class BaseListener implements JSONListener {
         if (objectScopeDeepCount == 0 && arrayScopeDeepCount == 0)
         {
             inNestedObject = false;
-            int a = ctx.start.getStartIndex();
-            int b = ctx.stop.getStopIndex();
-            Interval interval = new Interval(a, b);
-            CharStream input = ctx.start.getInputStream();
-
-            if (listenTo)
-            {
-                /*
-                 * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
-                 * to duplicatesMap, and removed from the valueMap.
-                 **/
-                if (currentObject.getValueMap().containsKey(tempKey))
-                {
-                    currentObject.swapToDuplicates(tempKey);
-                }
-
-                currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
-            }
-            else
-            {
-                currentArray.getElements().add(new JSONObject(input.getText(interval)));
-            }
-        }
-
-    }
-
-    public void enterArray(JSONParser.ArrayContext ctx) {
-
-        arrayScopeDeepCount++;
-        inNestedArray = true;
-    }
-
-    public void exitArray(JSONParser.ArrayContext ctx) {
-
-        arrayScopeDeepCount--;
-
-        if (arrayScopeDeepCount == 0 && objectScopeDeepCount == 0)
-        {
             inNestedArray = false;
             int a = ctx.start.getStartIndex();
             int b = ctx.stop.getStopIndex();
@@ -308,13 +282,83 @@ public class BaseListener implements JSONListener {
                     currentObject.swapToDuplicates(tempKey);
                 }
 
-                currentObject.getValueMap().put(tempKey, new JSONArray(input.getText(interval)));
+                /*
+                * if the text is an empty object, then use the first constructor of JSONObject, else, the second
+                * */
+                if (input.getText(interval).equals("{}"))
+                {
+                    currentObject.getValueMap().put(tempKey, new JSONObject());
+                }
+                else
+                {
+                    currentObject.getValueMap().put(tempKey, new JSONObject(input.getText(interval)));
+                }
             }
             else
             {
                 /*
-                * if the array is empty, save the string representation and don't parse it
+                 * if the text is an empty object, then use the first constructor of JSONObject, else, the second
+                 * */
+                if (input.getText(interval).equals("{}"))
+                {
+                    currentArray.getElements().add(new JSONObject());
+                }
+                else
+                {
+                    currentArray.getElements().add(new JSONObject(input.getText(interval)));
+                }
+            }
+        }
+    }
+
+    public void enterArray(JSONParser.ArrayContext ctx) {
+
+        arrayScopeDeepCount++;
+        inNestedArray = true;
+    }
+
+    public void exitArray(JSONParser.ArrayContext ctx) {
+
+        arrayScopeDeepCount--;
+
+        if (arrayScopeDeepCount == 0 && objectScopeDeepCount == 0)
+        {
+            inNestedArray = false;
+            inNestedObject = false;
+            int a = ctx.start.getStartIndex();
+            int b = ctx.stop.getStopIndex();
+            Interval interval = new Interval(a, b);
+            CharStream input = ctx.start.getInputStream();
+
+            if (listenTo)
+            {
+                /*
+                 * if the valueMap of currentObject has previous pair with same key, then the old pair would be swapped
+                 * to duplicatesMap, and removed from the valueMap.
+                 **/
+                if (currentObject.getValueMap().containsKey(tempKey))
+                {
+                    currentObject.swapToDuplicates(tempKey);
+                }
+
+                /*
+                *  if the text is an empty array, then use the first constructor of JSONArray, else, the second
                 * */
+                if (input.getText(interval).equals("[]"))
+                {
+                    currentObject.getValueMap().put(tempKey, new JSONArray());
+                }
+                else
+                {
+                    currentObject.getValueMap().put(tempKey, new JSONArray(input.getText(interval)));
+                }
+
+            }
+            else
+            {
+                /*
+                 * if the text is an empty array, then use the first constructor of JSONArray, else, the second
+                 * */
                 if (input.getText(interval).equals("[]"))
                 {
                     currentArray.getElements().add(new JSONArray());

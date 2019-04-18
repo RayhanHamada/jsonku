@@ -46,7 +46,7 @@ comments
 
 objectRoot
     : '{' (pair (',' pair)*)* '}'
-    | NULL_LITERAL
+    | nullLiteral
     ;
 
 arrayRoot

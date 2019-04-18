@@ -29,16 +29,20 @@ public class JSONArray extends JSONValue{
         this.elements = new ArrayList<>();
 
         /*
-         * if the value is not null or not equal to the string "null" then parse it, if not, then don't parse
+         * if the value is null or an empty array then don't parse it, if not, then parse
          * */
 
-        if (value != null || !value.equals("null") || !value.equals("[]"))
+        if (value != null)
         {
-            CharStream input = CharStreams.fromString(value);
-            JSONLexer lexer = new JSONLexer(input);
-            JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
-            parser.addParseListener(new BaseListener(this));
-            parser.arrayRoot();
+
+            if (!value.equals("[]"))
+            {
+                CharStream input = CharStreams.fromString(value);
+                JSONLexer lexer = new JSONLexer(input);
+                JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
+                parser.addParseListener(new BaseListener(this));
+                parser.arrayRoot();
+            }
         }
 
         if (!BaseListener.canExecuteSomething)
@@ -293,7 +297,7 @@ public class JSONArray extends JSONValue{
 
     public void updateValueString()
     {
-        if (this.value == null || this.value.equals("null"))
+        if (this.value == null)
             return;
 
         value = "[";
