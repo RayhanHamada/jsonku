@@ -6,6 +6,11 @@ public class JSONNull extends JSONValue{
     {}
 
     public String getValue() {
+        return null;
+    }
+
+    public String getStringRepr()
+    {
         return "null";
     }
 }

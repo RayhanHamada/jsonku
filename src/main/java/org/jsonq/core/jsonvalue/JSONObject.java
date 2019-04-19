@@ -160,7 +160,7 @@ public class JSONObject extends JSONValue {
 
     public void putString(String key, String value)
     {
-        valueMap.put(key, new JSONString("\"" + value + "\""));
+        valueMap.put(key, new JSONString(value));
         updateValueString();
     }
 
@@ -233,23 +233,27 @@ public class JSONObject extends JSONValue {
 
         if (valueMap.get(key) instanceof JSONObject)
         {
-            duplicates += key + " : " + ((JSONObject)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONObject)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONString)
         {
-            duplicates += key + " : " + ((JSONString)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\"" + " : " + ((JSONString)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONNumber)
         {
-            duplicates += key + " : " + ((JSONNumber)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONNumber)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONBoolean)
         {
-            duplicates += key + " : " + ((JSONBoolean)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONBoolean)valueMap.get(key)).getValue();
         }
         else if (valueMap.get(key) instanceof JSONArray)
         {
-            duplicates += key + " : " + ((JSONArray)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONArray)valueMap.get(key)).getValue();
+        }
+        else if (valueMap.get(key) instanceof JSONNull)
+        {
+            duplicates += "\"" + key + "\""  + " : " + ((JSONNull)valueMap.get(key)).getValue();
         }
 
         duplicates += ",\n";

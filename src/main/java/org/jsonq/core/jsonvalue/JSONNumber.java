@@ -11,6 +11,23 @@ public class JSONNumber extends JSONValue {
         this.value = value;
     }
 
+    public JSONNumber(int value)
+    {
+        this.value = Integer.toString(value);
+    }
+
+    public JSONNumber(float value)
+    {
+        this.value = Float.toString(value);
+    }
+
+    public JSONNumber(long value)
+    {
+        this.value = Long.toString(value);
+    }
+
+
+
     public String getValue() {
         if (this.value == null)
             return null;

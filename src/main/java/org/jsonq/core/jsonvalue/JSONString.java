@@ -8,7 +8,10 @@ public class JSONString extends JSONValue {
 
     public JSONString(String value)
     {
-        this.value = value;
+        if (value == null)
+            this.value = null;
+        else
+            this.value = value;
     }
 
     public String getValue()

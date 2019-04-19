@@ -178,22 +178,35 @@ public class JSONArray extends JSONValue{
         return (JSONArray) elements.get(i);
     }
 
-    public JSONNumber setNumberAt(int i, String number)
+    public void setNumberAt(int i, String number)
     {
         if (isNumeric(number))
         {
             elements.set(i, new JSONNumber(number));
             updateValueString();
-            return (JSONNumber) elements.get(i);
         }
         throw new NumberFormatException();
     }
 
-    public JSONString setStringAt(int i, String st)
+    public void setNumber(int i, int n)
+    {
+        elements.set(i, new JSONNumber(n));
+    }
+
+    public void setNumber(int i, float n)
+    {
+        elements.set(i, new JSONNumber(n));
+    }
+
+    public void setNumber(int i, long n)
+    {
+        elements.set(i, new JSONNumber(n));
+    }
+
+    public void setStringAt(int i, String st)
     {
         elements.set(i, new JSONString("\"" + st + "\""));
         updateValueString();
-        return (JSONString) elements.get(i);
     }
 
     public JSONBoolean setBoolAt(int i, boolean bool)
@@ -277,6 +290,12 @@ public class JSONArray extends JSONValue{
     public void addBoolean(boolean bool)
     {
         elements.add(new JSONBoolean(Boolean.toString(bool)));
+        updateValueString();
+    }
+
+    public void addNull()
+    {
+        elements.add(new JSONNull());
         updateValueString();
     }
 
