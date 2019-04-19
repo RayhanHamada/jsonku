@@ -145,7 +145,6 @@ public class JSONObject extends JSONValue {
     public JSONObject createEmptyObject(String key)
     {
         valueMap.put(key, new JSONObject());
-        updateValueString();
 
         return (JSONObject) valueMap.get(key);
     }
@@ -153,7 +152,6 @@ public class JSONObject extends JSONValue {
     public JSONArray createEmptyArray(String key)
     {
         valueMap.put(key, new JSONArray());
-        updateValueString();
 
         return (JSONArray) valueMap.get(key);
     }
@@ -161,7 +159,6 @@ public class JSONObject extends JSONValue {
     public void putString(String key, String value)
     {
         valueMap.put(key, new JSONString(value));
-        updateValueString();
     }
 
     public void putNumber(String key, String value)
@@ -169,7 +166,6 @@ public class JSONObject extends JSONValue {
         if (isNumeric(value))
         {
             valueMap.put(key, new JSONNumber(value));
-            updateValueString();
             return;
         }
         throw new NumberFormatException();
@@ -178,13 +174,11 @@ public class JSONObject extends JSONValue {
     public void putBoolean(String key, boolean value)
     {
         valueMap.put(key, new JSONBoolean(value));
-        updateValueString();
     }
 
     public String getValueTypeOf(String key)
     {
         if (valueMap.containsKey(key)) return ((JSONValue)valueMap.get(key)).getClass().toString().replaceAll("^.+\\.", "");
-
         throw new KeyNotFoundException();
     }
 
@@ -210,7 +204,9 @@ public class JSONObject extends JSONValue {
             else if (valueMap.get(k) instanceof JSONArray)
                 ((JSONArray)valueMap.get(k)).updateValueString();
 
-            value += "\t\"" + k + "\" : " + valueMap.get(k).getValue();
+            if (valueMap.get(k) instanceof JSONString) value += "\t\"" + k + "\" : \"" + valueMap.get(k).getValue() + "\"";
+            else value += "\t\"" + k + "\" : " + valueMap.get(k).getValue();
+
             if (vmapString.indexOf(k) != vmapString.size()-1)
             {
                 value += ",";

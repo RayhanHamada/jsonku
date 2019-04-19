@@ -144,7 +144,7 @@ public class BaseListener implements JSONListener {
                 }
 
                 //add current pair to valueMap
-                currentObject.getValueMap().put(tempKey, new JSONString(input.getText(interval)));
+                currentObject.getValueMap().put(tempKey, new JSONString(input.getText(interval).substring(1, input.getText(interval).length()-1)));
             }
         }
         else
@@ -156,7 +156,7 @@ public class BaseListener implements JSONListener {
                 Interval interval = new Interval(a, b);
                 CharStream input = ctx.start.getInputStream();
 
-                currentArray.getElements().add(new JSONString(input.getText(interval)));
+                currentArray.getElements().add(new JSONString(input.getText(interval).substring(1, input.getText(interval).length()-1)));
             }
         }
     }

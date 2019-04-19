@@ -155,9 +155,7 @@ public class JSONArray extends JSONValue{
      * */
     public JSONValue setValueAt(int i, JSONValue v)
     {
-
         elements.set(i, v);
-        updateValueString();
         return elements.get(i);
     }
 
@@ -167,14 +165,12 @@ public class JSONArray extends JSONValue{
     public JSONObject setObjectAt(int i, JSONObject object)
     {
         elements.set(i, object);
-        updateValueString();
         return (JSONObject) elements.get(i);
     }
 
     public JSONArray setArrayAt(int i, JSONArray array)
     {
         elements.set(i, array);
-        updateValueString();
         return (JSONArray) elements.get(i);
     }
 
@@ -183,7 +179,6 @@ public class JSONArray extends JSONValue{
         if (isNumeric(number))
         {
             elements.set(i, new JSONNumber(number));
-            updateValueString();
         }
         throw new NumberFormatException();
     }
@@ -205,15 +200,12 @@ public class JSONArray extends JSONValue{
 
     public void setStringAt(int i, String st)
     {
-        elements.set(i, new JSONString("\"" + st + "\""));
-        updateValueString();
+        elements.set(i, new JSONString(st));
     }
 
-    public JSONBoolean setBoolAt(int i, boolean bool)
+    public void setBoolAt(int i, boolean bool)
     {
         elements.set(i, new JSONBoolean(bool));
-        updateValueString();
-        return (JSONBoolean) elements.get(i);
     }
 
 
@@ -234,51 +226,43 @@ public class JSONArray extends JSONValue{
     public JSONObject addObject(JSONObject object)
     {
         elements.add(object);
-        updateValueString();
         return (JSONObject) elements.get(elements.size()-1);
     }
 
     public JSONArray addArray(JSONArray array)
     {
         elements.add(array);
-        updateValueString();
         return (JSONArray) elements.get(elements.size()-1);
     }
 
     public void addNumber(JSONNumber number)
     {
         elements.add(number);
-        updateValueString();
     }
 
     public void addNumber(int n)
     {
         elements.add(new JSONNumber(Integer.toString(n)));
-        updateValueString();
     }
 
     public void addNumber(float n)
     {
         elements.add(new JSONNumber(Float.toString(n)));
-        updateValueString();
     }
 
     public void addNumber(long n)
     {
         elements.add(new JSONNumber(Long.toString(n)));
-        updateValueString();
     }
 
     public void addString(JSONString string)
     {
         elements.add(string);
-        updateValueString();
     }
 
     public void addString(String s)
     {
         elements.add(new JSONString("\"" + s + "\""));
-        updateValueString();
     }
 
     public void addBoolean(JSONBoolean bool)
@@ -305,13 +289,11 @@ public class JSONArray extends JSONValue{
     public void removeElement(int i)
     {
         elements.remove(i);
-        updateValueString();
     }
 
     public void removeElement(JSONValue value)
     {
         elements.remove(value);
-        updateValueString();
     }
 
     public void updateValueString()
@@ -323,7 +305,10 @@ public class JSONArray extends JSONValue{
 
         for (JSONValue v : elements)
         {
-            value += v.getValue() + ",";
+            if (v instanceof JSONString)
+                value += "\"" + v.getValue() + "\",";
+            else
+                value += v.getValue() + ",";
         }
 
         value = value.replaceAll(",$", "") + "]";
