@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fe4b4047-37ce-4ea5-b5d4-a4d42abc4ac8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jsonq.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/Tester2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/tester/j2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/j2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/InvalidJSONValueTypeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/InvalidJSONValueTypeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONObject.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,98 +27,21 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/test/Tester2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="121" selection-start-line="6" selection-start-column="121" selection-end-line="6" selection-end-column="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/j2.json">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="195" column="16" lean-forward="true" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/extras/JSONFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="37" column="65" lean-forward="true" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4437#4438#0" expanded="true" />
-                <element signature="e#4546#4547#0" expanded="true" />
-                <element signature="e#4644#4645#0" expanded="true" />
-                <element signature="e#4748#4749#0" expanded="true" />
-                <element signature="e#4856#4857#0" expanded="true" />
-                <element signature="e#6050#6051#0" expanded="true" />
-                <element signature="e#6155#6156#0" expanded="true" />
-                <element signature="e#6260#6261#0" expanded="true" />
-                <element signature="e#6363#6364#0" expanded="true" />
-                <element signature="e#6475#6476#0" expanded="true" />
-                <element signature="e#6595#6596#0" expanded="true" />
-                <element signature="e#6711#6712#0" expanded="true" />
-                <element signature="e#6799#6800#0" expanded="true" />
-                <element signature="e#6889#6890#0" expanded="true" />
-                <element signature="e#7015#7016#0" expanded="true" />
-                <element signature="e#7101#7102#0" expanded="true" />
-                <element signature="e#7218#7219#0" expanded="true" />
-                <element signature="e#7348#7349#0" expanded="true" />
-                <element signature="e#7425#7426#0" expanded="true" />
-                <element signature="e#7770#7771#0" expanded="true" />
-                <element signature="e#7862#7863#0" expanded="true" />
-                <element signature="e#8377#8378#0" expanded="true" />
-                <element signature="e#8784#8785#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="109" selection-start-line="10" selection-start-column="109" selection-end-line="10" selection-end-column="109" />
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -199,6 +124,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" />
+        <option value="$PROJECT_DIR$/src/main/test/Tester.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/test/Tester2.java" />
       </list>
     </option>
   </component>
@@ -215,6 +143,11 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="jsonq" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="jsonq" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
       <select />
@@ -234,8 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,83 +199,14 @@
               <item name="jsonq" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="antlrgenerated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="extras" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonvalue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="listener" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="tester" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonq" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,6 +239,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\RayhanHamada\CodingStuff\Exercise\Java\jsonq\src\main\resources" />
+      <recent name="D:\RayhanHamada\CodingStuff\Exercise\Java\jsonq\src\main\test" />
       <recent name="D:\RayhanHamada\CodingStuff\Exercise\Java\jsonq\src\main\java\org\jsonq\tester" />
     </key>
   </component>
@@ -390,7 +256,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tester2">
+  <component name="RunManager" selected="Application.Tester2 (1)">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.jsonq.Main" />
       <module name="jsonq" />
@@ -414,6 +280,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tester2 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tester2" />
+      <module name="jsonq" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -449,9 +322,11 @@
       <item itemvalue="Application.Tester2" />
       <item itemvalue="Application.Tester3" />
       <item itemvalue="Application.Tester" />
+      <item itemvalue="Application.Tester2 (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tester2 (1)" />
         <item itemvalue="Application.Tester2" />
         <item itemvalue="Application.Tester3" />
         <item itemvalue="Application.Tester" />
@@ -589,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555677698783</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="remove JSONArrayOutOfBoundException, and remove indentation for updateValue method on JSONArray and JSONObject class, and made some optimization">
+      <created>1555680151970</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1555680151970</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -605,7 +487,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.19261745" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.19530201" />
       <window_info id="Structure" order="1" sideWeight="0.5020408" side_tool="true" weight="0.19060403" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -614,16 +496,16 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966443" weight="0.25637394" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966443" visible="true" weight="0.25637394" />
       <window_info anchor="bottom" x="1955" y="299" width="1310" height="448" id="Debug" order="3" sideWeight="0.49932885" type="FLOATING" weight="0.305949" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4966443" visible="true" weight="0.25212464" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4966443" weight="0.25212464" />
       <window_info anchor="bottom" id="Tool Output" order="8" />
       <window_info anchor="bottom" id="ConsoleMavenPlugin" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033557" side_tool="true" visible="true" weight="0.25212464" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033557" side_tool="true" weight="0.25212464" />
       <window_info anchor="bottom" id="ANTLR Preview" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49932885" weight="0.21529745" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -693,7 +575,8 @@
     <MESSAGE value="add overloading for JSONNumber constructor, JSONArray's setNumber, and fix null value stored as a string" />
     <MESSAGE value="fix string value surrounded by double double quotes error" />
     <MESSAGE value="add more overload for adding element to JSONArray" />
-    <option name="LAST_COMMIT_MESSAGE" value="add more overload for adding element to JSONArray" />
+    <MESSAGE value="remove JSONArrayOutOfBoundException, and remove indentation for updateValue method on JSONArray and JSONObject class, and made some optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove JSONArrayOutOfBoundException, and remove indentation for updateValue method on JSONArray and JSONObject class, and made some optimization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -837,13 +720,13 @@
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester.java</url>
+          <url>file://$PROJECT_DIR$/src/main/test/Tester.java</url>
           <line>33</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester.java</url>
+          <url>file://$PROJECT_DIR$/src/main/test/Tester.java</url>
           <line>34</line>
           <properties />
           <option name="timeStamp" value="108" />
@@ -1221,7 +1104,7 @@
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester.java</url>
+          <url>file://$PROJECT_DIR$/src/main/test/Tester.java</url>
           <line>13</line>
           <properties />
           <option name="timeStamp" value="234" />
@@ -1395,7 +1278,7 @@
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java</url>
+          <url>file://$PROJECT_DIR$/src/main/test/Tester2.java</url>
           <line>8</line>
           <properties />
           <option name="timeStamp" value="275" />
@@ -1517,17 +1400,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Tester.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/ArrayJSON.g4" />
     <entry file="file://$PROJECT_DIR$/.idea/jsonSchemas.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-          <folding>
-            <element signature="e#161#162#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONBaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -1535,7 +1408,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
@@ -1602,13 +1475,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/DummyClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/DummyClass.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/extras/JSONFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1619,17 +1486,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/j2.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/j2.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="109" selection-start-line="10" selection-start-column="109" selection-end-line="10" selection-end-column="109" />
         </state>
       </provider>
     </entry>
@@ -1682,11 +1542,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
+        <state relative-caret-position="-855">
           <caret line="195" column="16" lean-forward="true" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/Tester2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="121" selection-start-line="6" selection-start-column="121" selection-end-line="6" selection-end-column="121" />
         </state>
       </provider>
     </entry>
