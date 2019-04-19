@@ -1,7 +1,7 @@
-package org.jsonq.core.extras;
+package org.jsonku.core.extras;
 
-import org.jsonq.core.jsonvalue.JSONArray;
-import org.jsonq.core.jsonvalue.JSONObject;
+import org.jsonku.core.jsonvalue.JSONArray;
+import org.jsonku.core.jsonvalue.JSONObject;
 
 import java.io.*;
 

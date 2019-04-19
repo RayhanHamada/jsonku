@@ -1,4 +1,4 @@
-package org.jsonq.core.jsonvalue;
+package org.jsonku.core.jsonvalue;
 
 public abstract class JSONValue {
 

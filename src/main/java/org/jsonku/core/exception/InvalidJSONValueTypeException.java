@@ -1,4 +1,4 @@
-package org.jsonq.core.exception;
+package org.jsonku.core.exception;
 
 public class InvalidJSONValueTypeException extends RuntimeException {
 

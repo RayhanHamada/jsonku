@@ -1,13 +1,13 @@
-package org.jsonq.core.jsonvalue;
+package org.jsonku.core.jsonvalue;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.jsonq.core.antlrgenerated.JSONLexer;
-import org.jsonq.core.antlrgenerated.JSONParser;
-import org.jsonq.core.exception.InvalidJSONValueTypeException;
-import org.jsonq.core.exception.KeyNotFoundException;
-import org.jsonq.core.listener.BaseListener;
+import org.jsonku.core.antlrgenerated.JSONParser;
+import org.jsonku.core.exception.InvalidJSONValueTypeException;
+import org.jsonku.core.exception.KeyNotFoundException;
+import org.jsonku.core.listener.BaseListener;
+import org.jsonku.core.antlrgenerated.JSONLexer;
 
 import java.util.ArrayList;
 import java.util.HashMap;

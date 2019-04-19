@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jsonq.iml" filepath="$PROJECT_DIR$/jsonq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsonku.iml" filepath="$PROJECT_DIR$/jsonku.iml" />
     </modules>
   </component>
 </project>

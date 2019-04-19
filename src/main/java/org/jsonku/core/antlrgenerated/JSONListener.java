@@ -1,5 +1,5 @@
 // Generated from D:/RayhanHamada/CodingStuff/Exercise/Java/jsonq/src/main/resources\JSON.g4 by ANTLR 4.7.2
-package org.jsonq.core.antlrgenerated;
+package org.jsonku.core.antlrgenerated;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
