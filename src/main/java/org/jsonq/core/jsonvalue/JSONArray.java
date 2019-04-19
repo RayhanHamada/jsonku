@@ -34,7 +34,6 @@ public class JSONArray extends JSONValue{
 
         if (value != null)
         {
-
             if (!value.equals("[]"))
             {
                 CharStream input = CharStreams.fromString(value);
@@ -151,7 +150,7 @@ public class JSONArray extends JSONValue{
     }
 
     /*
-     * general setters, in order to use the return value, cast the return value to the wanted value type if you want to use it as an argument
+     * general setters, in order to use the return value, cast the return value to the wanted value type if you want to use the value
      * */
     public JSONValue setValueAt(int i, JSONValue v)
     {
@@ -176,21 +175,18 @@ public class JSONArray extends JSONValue{
 
     public void setNumberAt(int i, String number)
     {
-        if (isNumeric(number))
-        {
-            elements.set(i, new JSONNumber(number));
-        }
+        if (isNumeric(number)) elements.set(i, new JSONNumber(number));
         throw new NumberFormatException();
     }
 
-    public void setNumber(int i, int n)
+    public void setNumber(int i, int number)
     {
-        elements.set(i, new JSONNumber(n));
+        elements.set(i, new JSONNumber(number));
     }
 
-    public void setNumber(int i, float n)
+    public void setNumber(int i, float number)
     {
-        elements.set(i, new JSONNumber(n));
+        elements.set(i, new JSONNumber(number));
     }
 
     public void setNumber(int i, long n)
@@ -208,7 +204,6 @@ public class JSONArray extends JSONValue{
         elements.set(i, new JSONBoolean(bool));
     }
 
-
     /*
     * general adder, cast the return value to the wanted value type if you want to use it as an argument
     * */
@@ -220,7 +215,7 @@ public class JSONArray extends JSONValue{
     }
 
     /*
-    * element adder for instant appending
+    * element adder for appending elements in JSONArray
     * */
 
     public JSONObject addObject(JSONObject object)
@@ -229,11 +224,24 @@ public class JSONArray extends JSONValue{
         return (JSONObject) elements.get(elements.size()-1);
     }
 
+    public void addEmptyObjects(int many) throws Exception
+    {
+        if (many <= 0) throw new Exception("the argument can't be less than or equal to 0");
+        for (int i = 0; i < many; i++) elements.add(new JSONObject());
+    }
+
     public JSONArray addArray(JSONArray array)
     {
         elements.add(array);
         return (JSONArray) elements.get(elements.size()-1);
     }
+
+    public void addEmptyArrays(int many) throws Exception
+    {
+        if (many <= 0) throw new Exception("the argument can't be less than or equal to 0");
+        for (int i = 0; i < many; i++) elements.add(new JSONArray());
+    }
+
 
     public void addNumber(JSONNumber number)
     {
@@ -255,6 +263,21 @@ public class JSONArray extends JSONValue{
         elements.add(new JSONNumber(Long.toString(n)));
     }
 
+    public void addNumbers(int...ints)
+    {
+        for (int i : ints) elements.add(new JSONNumber(i));
+    }
+
+    public void addNumbers(float...floats)
+    {
+        for (float f : floats) elements.add(new JSONNumber(f));
+    }
+
+    public void addNumbers(long...longs)
+    {
+        for (long l : longs) elements.add(new JSONNumber(l));
+    }
+
     public void addString(JSONString string)
     {
         elements.add(string);
@@ -262,25 +285,38 @@ public class JSONArray extends JSONValue{
 
     public void addString(String s)
     {
-        elements.add(new JSONString("\"" + s + "\""));
+        elements.add(new JSONString(s));
+    }
+
+    public void addStrings(String...strings)
+    {
+        for (String st : strings) elements.add(new JSONString(st));
     }
 
     public void addBoolean(JSONBoolean bool)
     {
         elements.add(bool);
-        updateValueString();
     }
 
     public void addBoolean(boolean bool)
     {
         elements.add(new JSONBoolean(Boolean.toString(bool)));
-        updateValueString();
+    }
+
+    public void addBooleans(boolean...booleans)
+    {
+        for (boolean b : booleans) elements.add(new JSONBoolean(b));
     }
 
     public void addNull()
     {
         elements.add(new JSONNull());
-        updateValueString();
+    }
+
+    public void addNulls(int many) throws Exception
+    {
+        if (many <= 0 ) throw new Exception("the parameter can't be less than or equal to 0");
+        for (int i = 0; i < many; i++) elements.add(new JSONNull());
     }
 
     /*
@@ -298,17 +334,14 @@ public class JSONArray extends JSONValue{
 
     public void updateValueString()
     {
-        if (this.value == null)
-            return;
+        if (this.value == null) return;
 
         value = "[";
 
         for (JSONValue v : elements)
         {
-            if (v instanceof JSONString)
-                value += "\"" + v.getValue() + "\",";
-            else
-                value += v.getValue() + ",";
+            if (v instanceof JSONString) value += "\"" + v.getValue() + "\",";
+            else value += v.getValue() + ",";
         }
 
         value = value.replaceAll(",$", "") + "]";

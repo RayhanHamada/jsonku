@@ -20,12 +20,6 @@ public class JSONString extends JSONValue {
         return value;
     }
 
-    public String getLiteralValue()
-    {
-        if (this.value == null) return null;
-        return value.substring(1, value.length()-1);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
