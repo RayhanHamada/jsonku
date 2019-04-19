@@ -134,7 +134,6 @@ public class JSONObject extends JSONValue {
             if (valueMap.get(key) instanceof JSONNumber) return (JSONNumber) valueMap.get(key);
             throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
         }
-
         throw new KeyNotFoundException();
     }
 
@@ -145,14 +144,12 @@ public class JSONObject extends JSONValue {
     public JSONObject createEmptyObject(String key)
     {
         valueMap.put(key, new JSONObject());
-
         return (JSONObject) valueMap.get(key);
     }
 
     public JSONArray createEmptyArray(String key)
     {
         valueMap.put(key, new JSONArray());
-
         return (JSONArray) valueMap.get(key);
     }
 
@@ -191,7 +188,7 @@ public class JSONObject extends JSONValue {
             return;
 
         ArrayList<String> vmapString = new ArrayList<>(valueMap.keySet());
-        value = "{\n" + duplicates;
+        value = "{" + duplicates;
         for (String k : vmapString)
         {
 
@@ -204,14 +201,13 @@ public class JSONObject extends JSONValue {
             else if (valueMap.get(k) instanceof JSONArray)
                 ((JSONArray)valueMap.get(k)).updateValueString();
 
-            if (valueMap.get(k) instanceof JSONString) value += "\t\"" + k + "\" : \"" + valueMap.get(k).getValue() + "\"";
-            else value += "\t\"" + k + "\" : " + valueMap.get(k).getValue();
+            if (valueMap.get(k) instanceof JSONString) value += "\"" + k + "\" : \"" + valueMap.get(k).getValue() + "\"";
+            else value += "\"" + k + "\" : " + valueMap.get(k).getValue();
 
             if (vmapString.indexOf(k) != vmapString.size()-1)
             {
-                value += ",";
+                value += ", ";
             }
-            value += "\n";
 
         }
         value += "}";
@@ -219,7 +215,7 @@ public class JSONObject extends JSONValue {
 
     /*
      * if 1 or more duplicate of key is detected in valueMap, then the value get swapped into duplicates, so
-     * only the new pair in valueMap.
+     * valueMap only contains latest pair.
      * */
     public void swapToDuplicates(String key)
     {
@@ -252,7 +248,7 @@ public class JSONObject extends JSONValue {
             duplicates += "\"" + key + "\""  + " : " + ((JSONNull)valueMap.get(key)).getValue();
         }
 
-        duplicates += ",\n";
+        duplicates += ", ";
 
         valueMap.remove(key);
     }

@@ -6,7 +6,6 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.jsonq.core.antlrgenerated.JSONLexer;
 import org.jsonq.core.antlrgenerated.JSONParser;
 import org.jsonq.core.exception.InvalidJSONValueTypeException;
-import org.jsonq.core.exception.JSONArrayIndexOutOfBoundException;
 import org.jsonq.core.listener.BaseListener;
 
 import java.util.ArrayList;
@@ -53,13 +52,6 @@ public class JSONArray extends JSONValue{
      * */
     public JSONValue getValueAt(int i)
     {
-
-        if (i >= elements.size()) try {
-            throw new JSONArrayIndexOutOfBoundException();
-        } catch (JSONArrayIndexOutOfBoundException e) {
-            e.printStackTrace();
-        }
-
         if (this.value == null)
             return null;
         return elements.get(i);
@@ -71,13 +63,6 @@ public class JSONArray extends JSONValue{
 
     public JSONObject getObjectAt(int i)
     {
-
-        if (i >= elements.size()) try {
-            throw new JSONArrayIndexOutOfBoundException();
-        } catch (JSONArrayIndexOutOfBoundException e) {
-            e.printStackTrace();
-        }
-
         if (this.value == null || this.elements.get(i) instanceof JSONNull)
             return new JSONObject(null);
 
@@ -89,13 +74,6 @@ public class JSONArray extends JSONValue{
 
     public JSONArray getArrayAt(int i)
     {
-
-        if (i >= elements.size()) try {
-            throw new JSONArrayIndexOutOfBoundException();
-        } catch (JSONArrayIndexOutOfBoundException e) {
-            e.printStackTrace();
-        }
-
         if (this.value == null || this.elements.get(i) instanceof JSONNull)
             return new JSONArray(null);
 
@@ -107,15 +85,8 @@ public class JSONArray extends JSONValue{
 
     public JSONNumber getNumberAt(int i)
     {
-
-        if (i >= elements.size()) try {
-            throw new JSONArrayIndexOutOfBoundException();
-        } catch (JSONArrayIndexOutOfBoundException e) {
-            e.printStackTrace();
-        }
-
         if (this.value == null || this.elements.get(i) instanceof JSONNull)
-            return new JSONNumber(null);
+            return null;
 
         if (elements.get(i) instanceof JSONNumber)
             return (JSONNumber) elements.get(i);
@@ -133,13 +104,6 @@ public class JSONArray extends JSONValue{
 
     public JSONBoolean getBooleanAt(int i)
     {
-
-        if (i >= elements.size()) try {
-            throw new JSONArrayIndexOutOfBoundException();
-        } catch (JSONArrayIndexOutOfBoundException e) {
-            e.printStackTrace();
-        }
-
         if (this.value == null || this.elements.get(i) instanceof JSONNull)
             return new JSONBoolean(null);
 
@@ -175,7 +139,11 @@ public class JSONArray extends JSONValue{
 
     public void setNumberAt(int i, String number)
     {
-        if (isNumeric(number)) elements.set(i, new JSONNumber(number));
+        if (isNumeric(number))
+        {
+            elements.set(i, new JSONNumber(number));
+            return;
+        }
         throw new NumberFormatException();
     }
 
@@ -210,7 +178,6 @@ public class JSONArray extends JSONValue{
     public JSONValue addValue(JSONValue value)
     {
         elements.add(value);
-        updateValueString();
         return elements.get(elements.size()-1);
     }
 
@@ -332,6 +299,11 @@ public class JSONArray extends JSONValue{
         elements.remove(value);
     }
 
+    public String getValue() {
+        updateValueString();
+        return value;
+    }
+
     public void updateValueString()
     {
         if (this.value == null) return;
@@ -341,15 +313,10 @@ public class JSONArray extends JSONValue{
         for (JSONValue v : elements)
         {
             if (v instanceof JSONString) value += "\"" + v.getValue() + "\",";
-            else value += v.getValue() + ",";
+            else value += v.getValue() + ", ";
         }
 
         value = value.replaceAll(",$", "") + "]";
-    }
-
-    public String getValue() {
-        updateValueString();
-        return value;
     }
 
     public ArrayList<JSONValue> getElements() {
