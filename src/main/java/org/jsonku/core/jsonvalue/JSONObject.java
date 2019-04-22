@@ -201,8 +201,8 @@ public class JSONObject extends JSONValue {
             else if (valueMap.get(k) instanceof JSONArray)
                 ((JSONArray)valueMap.get(k)).updateValueString();
 
-            if (valueMap.get(k) instanceof JSONString) value += "\"" + k + "\" : \"" + valueMap.get(k).getValue() + "\"";
-            else value += "\"" + k + "\" : " + valueMap.get(k).getValue();
+            if (valueMap.get(k) instanceof JSONString) value += "\"" + k + "\" : \"" + valueMap.get(k).toString() + "\"";
+            else value += "\"" + k + "\" : " + valueMap.get(k).toString();
 
             if (vmapString.indexOf(k) != vmapString.size()-1)
             {
@@ -225,27 +225,27 @@ public class JSONObject extends JSONValue {
 
         if (valueMap.get(key) instanceof JSONObject)
         {
-            duplicates += "\"" + key + "\""  + " : " + ((JSONObject)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONObject)valueMap.get(key)).toString();
         }
         else if (valueMap.get(key) instanceof JSONString)
         {
-            duplicates += "\"" + key + "\"" + " : " + ((JSONString)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\"" + " : " + ((JSONString)valueMap.get(key)).toString();
         }
         else if (valueMap.get(key) instanceof JSONNumber)
         {
-            duplicates += "\"" + key + "\""  + " : " + ((JSONNumber)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONNumber)valueMap.get(key)).toString();
         }
         else if (valueMap.get(key) instanceof JSONBoolean)
         {
-            duplicates += "\"" + key + "\""  + " : " + ((JSONBoolean)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONBoolean)valueMap.get(key)).toString();
         }
         else if (valueMap.get(key) instanceof JSONArray)
         {
-            duplicates += "\"" + key + "\""  + " : " + ((JSONArray)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONArray)valueMap.get(key)).toString();
         }
         else if (valueMap.get(key) instanceof JSONNull)
         {
-            duplicates += "\"" + key + "\""  + " : " + ((JSONNull)valueMap.get(key)).getValue();
+            duplicates += "\"" + key + "\""  + " : " + ((JSONNull)valueMap.get(key)).toString();
         }
 
         duplicates += ", ";
@@ -253,7 +253,7 @@ public class JSONObject extends JSONValue {
         valueMap.remove(key);
     }
 
-    public String getValue() {
+    public String toString() {
         updateValueString();
         return value;
     }

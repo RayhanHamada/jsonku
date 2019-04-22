@@ -40,7 +40,7 @@ objectRoot
 arrayRoot
 pair
 key
-value
+stringValue
 stringLiteral
 nullLiteral
 booleanLiteral

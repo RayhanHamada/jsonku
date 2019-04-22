@@ -5,42 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe4b4047-37ce-4ea5-b5d4-a4d42abc4ac8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/jsonku_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsonq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jsonku.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSON.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSON.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSON.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSON.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/antlrgenerated/JSONParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/exception/InvalidJSONValueTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/KeyNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/exception/KeyNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/extras/JSONFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/extras/JSONFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONBoolean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/BaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/listener/BaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSON.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSON.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/extras/JSONFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/extras/JSONFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONBoolean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/JSON.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/JSON.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/j2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/Tester2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/Tester2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/jsonq.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/InvalidJSONValueTypeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/exception/KeyNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONBoolean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONNull.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/jsonvalue/JSONValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsonq/core/listener/BaseListener.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,20 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/test/Tester2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/listener/BaseListener.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,10 +47,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="4182">
+              <caret line="318" column="48" selection-start-line="318" selection-start-column="48" selection-end-line="318" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,6 +91,7 @@
       <find>putString</find>
       <find>update</find>
       <find>getNumber</find>
+      <find>toString</find>
     </findStrings>
     <replaceStrings>
       <replace>JSONParser</replace>
@@ -163,9 +138,17 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/InvalidJSONValueTypeException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonq/core/jsonvalue/JSONObject.java" />
         <option value="$PROJECT_DIR$/src/main/test/Tester.java" />
-        <option value="$PROJECT_DIR$/src/main/test/Tester2.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/listener/BaseListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/Main.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/target/classes/Antlr4LICENSE.txt" />
+        <option value="$PROJECT_DIR$/target/classes/ANTLR4License.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONBoolean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNull.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/extras/JSONFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java" />
+        <option value="$PROJECT_DIR$/src/main/test/Tester2.java" />
       </list>
     </option>
   </component>
@@ -211,7 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,11 +219,81 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="antlrgenerated" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="extras" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="jsonvalue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsonku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsonku" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,10 +312,17 @@
     <property name="$PROJECT_DIR$/src/main/resources/ObjectJSON.g4::/gen-visitor" value="false" />
     <property name="$PROJECT_DIR$/src/main/resources/ObjectJSON.g4::/output-dir" value="D:\RayhanHamada\CodingStuff\Exercise\Java\jsonq\src\main\java" />
     <property name="$PROJECT_DIR$/src/main/resources/ObjectJSON.g4::/package" value="org.jsonq.core.antlrgenerated.objectgrammar" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553525991430" />
     <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.43218392" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -508,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555681258690</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="re-factor project, package, and maven artifact id to jsonku">
+      <created>1555684295921</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1555684295921</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -524,7 +590,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.19798657" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.21409395" />
       <window_info id="Structure" order="1" sideWeight="0.5020408" side_tool="true" weight="0.19060403" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -532,8 +598,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966443" weight="0.25637394" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.26203966" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966443" weight="0.3186969" />
       <window_info anchor="bottom" x="1955" y="299" width="1310" height="448" id="Debug" order="3" sideWeight="0.49932885" type="FLOATING" weight="0.305949" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -541,17 +607,17 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4966443" weight="0.25212464" />
       <window_info anchor="bottom" id="Tool Output" order="8" />
       <window_info anchor="bottom" id="ConsoleMavenPlugin" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033557" side_tool="true" weight="0.25212464" />
       <window_info anchor="bottom" id="ANTLR Preview" order="12" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" sideWeight="0.49932885" visible="true" weight="0.21529745" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49932885" weight="0.21529745" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.1885906" />
+      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.020134227" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
@@ -566,6 +632,12 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
+              </option>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="134" />
+                  <entry key="3" value="134" />
+                </map>
               </option>
               <option name="COLUMN_ORDER">
                 <list>
@@ -614,7 +686,8 @@
     <MESSAGE value="add more overload for adding element to JSONArray" />
     <MESSAGE value="remove JSONArrayOutOfBoundException, and remove indentation for updateValue method on JSONArray and JSONObject class, and made some optimization" />
     <MESSAGE value="re-organize folder and made a test folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-organize folder and made a test folder" />
+    <MESSAGE value="re-factor project, package, and maven artifact id to jsonku" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-factor project, package, and maven artifact id to jsonku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -804,18 +877,6 @@
           <line>54</line>
           <properties />
           <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java</url>
-          <line>302</line>
-          <properties />
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java</url>
-          <line>303</line>
-          <properties />
-          <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONObject.java</url>
@@ -1316,12 +1377,6 @@
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/test/Tester2.java</url>
-          <line>8</line>
-          <properties />
-          <option name="timeStamp" value="275" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/jsonku/core/listener/BaseListener.java</url>
           <line>83</line>
           <properties />
@@ -1408,44 +1463,12 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/Pair.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/customtools/JSONPair.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/listener/ArrayBaseListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/exception/KeyNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONBoolean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/wow.json" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/Tester.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/ArrayJSON.g4" />
     <entry file="file://$PROJECT_DIR$/.idea/jsonSchemas.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/core/exception/JSONArrayIndexOutOfBoundException.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONBaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/JSON.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
@@ -1468,47 +1491,84 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/Tester3.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
-          <folding>
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/test.json" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonq/tester/DummyClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/extras/JSONFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/j2.json" />
+    <entry file="file://$PROJECT_DIR$/src/main/test/Tester.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/exception/InvalidJSONValueTypeException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="85">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/exception/KeyNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/listener/BaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/j2.json">
+    <entry file="file://$PROJECT_DIR$/jsonku.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/exception/InvalidJSONValueTypeException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/antlrgenerated/JSONBaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="170">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/surefire-reports/Tester2.txt" />
+    <entry file="file://$PROJECT_DIR$/target/classes/ANTLR4License.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONBoolean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONNull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -1519,73 +1579,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="65" lean-forward="true" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4437#4438#0" expanded="true" />
-            <element signature="e#4546#4547#0" expanded="true" />
-            <element signature="e#4644#4645#0" expanded="true" />
-            <element signature="e#4748#4749#0" expanded="true" />
-            <element signature="e#4856#4857#0" expanded="true" />
-            <element signature="e#6050#6051#0" expanded="true" />
-            <element signature="e#6155#6156#0" expanded="true" />
-            <element signature="e#6260#6261#0" expanded="true" />
-            <element signature="e#6363#6364#0" expanded="true" />
-            <element signature="e#6475#6476#0" expanded="true" />
-            <element signature="e#6595#6596#0" expanded="true" />
-            <element signature="e#6711#6712#0" expanded="true" />
-            <element signature="e#6799#6800#0" expanded="true" />
-            <element signature="e#6889#6890#0" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-            <element signature="e#7101#7102#0" expanded="true" />
-            <element signature="e#7218#7219#0" expanded="true" />
-            <element signature="e#7348#7349#0" expanded="true" />
-            <element signature="e#7425#7426#0" expanded="true" />
-            <element signature="e#7770#7771#0" expanded="true" />
-            <element signature="e#7862#7863#0" expanded="true" />
-            <element signature="e#8377#8378#0" expanded="true" />
-            <element signature="e#8784#8785#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855">
-          <caret line="195" column="16" lean-forward="true" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
+        <state relative-caret-position="209">
+          <caret line="239" column="96" selection-start-line="239" selection-start-column="88" selection-end-line="239" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/Tester.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/extras/JSONFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/Tester2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/listener/BaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsonku/core/jsonvalue/JSONArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4182">
+          <caret line="318" column="48" selection-start-line="318" selection-start-column="48" selection-end-line="318" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>jsonku:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.43218392" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.43218392" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.antlr:antlr4:4.7.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.43218392" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.43218392" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>jsonku</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.43218392" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.antlr:antlr4:4.7.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.43218392" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

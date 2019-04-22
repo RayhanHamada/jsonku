@@ -28,7 +28,7 @@ public class JSONNumber extends JSONValue {
 
 
 
-    public String getValue() {
+    public String toString() {
         if (this.value == null)
             return null;
         return value;

@@ -4,30 +4,30 @@ import java.util.Objects;
 
 public class JSONBoolean extends JSONValue{
 
-    private String value;
+    private String stringValue;
     private boolean literalValue;
 
-    public JSONBoolean(String value)
+    public JSONBoolean(String stringValue)
     {
-        this.value = value;
-        this.literalValue = (value.equals("true"))? true : false;
+        this.stringValue = stringValue;
+        this.literalValue = (stringValue.equals("true"))? true : false;
     }
 
     public JSONBoolean(boolean literalValue)
     {
         this.literalValue = literalValue;
-        this.value = (literalValue)? "true" : "false";
+        this.stringValue = (literalValue)? "true" : "false";
     }
 
-    public String getValue()
+    public String toString()
     {
-        if (this.value == null)
+        if (this.stringValue == null)
             return null;
-        return value;
+        return stringValue;
     }
 
     public Boolean getLiteralValue() {
-        if (this.value == null)
+        if (this.stringValue == null)
             return null;
         return literalValue;
     }
@@ -38,11 +38,11 @@ public class JSONBoolean extends JSONValue{
         if (!(o instanceof JSONBoolean)) return false;
         JSONBoolean that = (JSONBoolean) o;
         return literalValue == that.literalValue &&
-                Objects.equals(value, that.value);
+                Objects.equals(stringValue, that.stringValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, literalValue);
+        return Objects.hash(stringValue, literalValue);
     }
 }

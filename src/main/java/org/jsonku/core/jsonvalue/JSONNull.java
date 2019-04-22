@@ -5,12 +5,8 @@ public class JSONNull extends JSONValue{
     public JSONNull()
     {}
 
-    public String getValue() {
+    public String toString() {
         return null;
     }
 
-    public String getStringRepr()
-    {
-        return "null";
-    }
 }

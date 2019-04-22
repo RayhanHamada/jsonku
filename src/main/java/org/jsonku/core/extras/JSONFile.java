@@ -48,15 +48,15 @@ public class JSONFile extends File {
         }
     }
 
-    public String getStringRepr()
+    public String getContent()
     {
         if (isObject)
         {
-            stringRepr = jsonObject.getValue();
+            stringRepr = jsonObject.toString();
         }
         else
         {
-            stringRepr = jsonArray.getValue();
+            stringRepr = jsonArray.toString();
         }
 
         return stringRepr;
@@ -93,23 +93,29 @@ public class JSONFile extends File {
 
     public void update(JSONObject o)
     {
-        this.stringRepr = o.getValue();
+        this.stringRepr = o.toString();
+        this.jsonObject = o;
+        this.jsonArray = null;
+        this.isObject = true;
     }
 
     public void update(JSONArray a)
     {
-        this.stringRepr = a.getValue();
+        this.stringRepr = a.toString();
+        this.jsonArray = a;
+        this.jsonObject = null;
+        this.isObject = false;
     }
 
     public void dump() throws Exception
     {
         if (isObject)
         {
-            stringRepr = jsonObject.getValue();
+            stringRepr = jsonObject.toString();
         }
         else
         {
-            stringRepr = jsonArray.getValue();
+            stringRepr = jsonArray.toString();
         }
 
         try{

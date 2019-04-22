@@ -13,29 +13,29 @@ import java.util.Objects;
 
 public class JSONArray extends JSONValue{
 
-    private String value;
+    private String stringValue;
     private ArrayList<JSONValue> elements;
 
     public JSONArray()
     {
-        this.value = "[]";
+        this.stringValue = "[]";
         this.elements = new ArrayList<>();
     }
 
-    public JSONArray(String value)
+    public JSONArray(String stringValue)
     {
-        this.value = value;
+        this.stringValue = stringValue;
         this.elements = new ArrayList<>();
 
         /*
-         * if the value is null or an empty array then don't parse it, if not, then parse
+         * if the stringValue is null or an empty array then don't parse it, if not, then parse
          * */
 
-        if (value != null)
+        if (stringValue != null)
         {
-            if (!value.equals("[]"))
+            if (!stringValue.equals("[]"))
             {
-                CharStream input = CharStreams.fromString(value);
+                CharStream input = CharStreams.fromString(stringValue);
                 JSONLexer lexer = new JSONLexer(input);
                 JSONParser parser = new JSONParser(new CommonTokenStream(lexer));
                 parser.addParseListener(new BaseListener(this));
@@ -48,11 +48,11 @@ public class JSONArray extends JSONValue{
     }
 
     /*
-     * general getters, need to cast because it return abstract value
+     * general getters, need to cast because it return abstract stringValue
      * */
     public JSONValue getValueAt(int i)
     {
-        if (this.value == null)
+        if (this.stringValue == null)
             return null;
         return elements.get(i);
     }
@@ -63,35 +63,35 @@ public class JSONArray extends JSONValue{
 
     public JSONObject getObjectAt(int i)
     {
-        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+        if (this.stringValue == null || this.elements.get(i) instanceof JSONNull)
             return new JSONObject(null);
 
         if (elements.get(i) instanceof JSONObject)
             return (JSONObject) elements.get(i);
 
-        throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
+        throw new InvalidJSONValueTypeException("The type of the stringValue to be returned is not same as the method return type.");
     }
 
     public JSONArray getArrayAt(int i)
     {
-        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+        if (this.stringValue == null || this.elements.get(i) instanceof JSONNull)
             return new JSONArray(null);
 
         if (elements.get(i) instanceof JSONArray)
             return (JSONArray) elements.get(i);
 
-        throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
+        throw new InvalidJSONValueTypeException("The type of the stringValue to be returned is not same as the method return type.");
     }
 
     public JSONNumber getNumberAt(int i)
     {
-        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+        if (this.stringValue == null || this.elements.get(i) instanceof JSONNull)
             return null;
 
         if (elements.get(i) instanceof JSONNumber)
             return (JSONNumber) elements.get(i);
 
-        throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
+        throw new InvalidJSONValueTypeException("The type of the stringValue to be returned is not same as the method return type.");
     }
 
     public JSONString getStringAt(int i)
@@ -99,22 +99,22 @@ public class JSONArray extends JSONValue{
         if (elements.get(i) instanceof JSONString)
             return (JSONString) elements.get(i);
 
-        throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
+        throw new InvalidJSONValueTypeException("The type of the stringValue to be returned is not same as the method return type.");
     }
 
     public JSONBoolean getBooleanAt(int i)
     {
-        if (this.value == null || this.elements.get(i) instanceof JSONNull)
+        if (this.stringValue == null || this.elements.get(i) instanceof JSONNull)
             return new JSONBoolean(null);
 
         if (elements.get(i) instanceof JSONBoolean)
             return (JSONBoolean) elements.get(i);
 
-        throw new InvalidJSONValueTypeException("The type of the value to be returned is not same as the method return type.");
+        throw new InvalidJSONValueTypeException("The type of the stringValue to be returned is not same as the method return type.");
     }
 
     /*
-     * general setters, in order to use the return value, cast the return value to the wanted value type if you want to use the value
+     * general setters, in order to use the return stringValue, cast the return stringValue to the wanted stringValue type if you want to use the stringValue
      * */
     public JSONValue setValueAt(int i, JSONValue v)
     {
@@ -147,17 +147,17 @@ public class JSONArray extends JSONValue{
         throw new NumberFormatException();
     }
 
-    public void setNumber(int i, int number)
+    public void setNumberAt(int i, int number)
     {
         elements.set(i, new JSONNumber(number));
     }
 
-    public void setNumber(int i, float number)
+    public void setNumberAt(int i, float number)
     {
         elements.set(i, new JSONNumber(number));
     }
 
-    public void setNumber(int i, long n)
+    public void setNumberAt(int i, long n)
     {
         elements.set(i, new JSONNumber(n));
     }
@@ -173,7 +173,7 @@ public class JSONArray extends JSONValue{
     }
 
     /*
-    * general adder, cast the return value to the wanted value type if you want to use it as an argument
+    * general adder, cast the return stringValue to the wanted stringValue type if you want to use it as an argument
     * */
     public JSONValue addValue(JSONValue value)
     {
@@ -289,7 +289,7 @@ public class JSONArray extends JSONValue{
     /*
     * element remover
     * */
-    public void removeElement(int i)
+    public void removeElementAt(int i)
     {
         elements.remove(i);
     }
@@ -299,24 +299,24 @@ public class JSONArray extends JSONValue{
         elements.remove(value);
     }
 
-    public String getValue() {
+    public String toString()
+    {
         updateValueString();
-        return value;
+        return stringValue;
     }
-
     public void updateValueString()
     {
-        if (this.value == null) return;
+        if (this.stringValue == null) return;
 
-        value = "[";
+        stringValue = "[";
 
         for (JSONValue v : elements)
         {
-            if (v instanceof JSONString) value += "\"" + v.getValue() + "\",";
-            else value += v.getValue() + ", ";
+            if (v instanceof JSONString) stringValue += "\"" + v.toString() + "\",";
+            else stringValue += v.toString() + ", ";
         }
 
-        value = value.replaceAll(",$", "") + "]";
+        stringValue = stringValue.replaceAll(", $", "") + "]";
     }
 
     public ArrayList<JSONValue> getElements() {
@@ -328,12 +328,12 @@ public class JSONArray extends JSONValue{
         if (this == o) return true;
         if (!(o instanceof JSONArray)) return false;
         JSONArray jsonArray = (JSONArray) o;
-        return Objects.equals(value, jsonArray.value) &&
+        return Objects.equals(stringValue, jsonArray.stringValue) &&
                 Objects.equals(elements, jsonArray.elements);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, elements);
+        return Objects.hash(stringValue, elements);
     }
 }

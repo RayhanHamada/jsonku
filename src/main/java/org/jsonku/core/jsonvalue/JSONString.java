@@ -14,7 +14,7 @@ public class JSONString extends JSONValue {
             this.value = value;
     }
 
-    public String getValue()
+    public String toString()
     {
         if (this.value == null) return null;
         return value;

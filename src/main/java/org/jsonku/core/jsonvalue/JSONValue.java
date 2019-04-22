@@ -30,5 +30,5 @@ public abstract class JSONValue {
         return false;
     }
 
-    public abstract String getValue();
+    public abstract String toString();
 }

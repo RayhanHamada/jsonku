@@ -8,11 +8,13 @@
     <artifactId>jsonku</artifactId>
     <version>1.0.0</version>
 
-    <properties>
+    <name>jsonku</name>
+    <description>a json encoder/decoder for java</description>
+    <url>https://github.com/RayhanHamada/jsonku</url>
 
+    <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-
     </properties>
 
     <dependencies>
@@ -24,6 +26,42 @@
         </dependency>
 
     </dependencies>
+
+<!--    <distributionManagement>-->
+<!--        &lt;!&ndash; use the following if you're not using a snapshot version. &ndash;&gt;-->
+<!--        <repository>-->
+<!--            <id>jsonku</id>-->
+<!--            <name>jsonku</name>-->
+<!--            <url>https://github.com/RayhanHamada/jsonku.git</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
+
+    <build>
+        <plugins>
+            <!-- any other plugins -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.jsonku.core.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

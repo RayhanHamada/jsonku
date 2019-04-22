@@ -50,18 +50,18 @@ objectRoot
     ;
 
 arrayRoot
-    : '[' (value (',' value)*)* ']'
+    : '[' (stringValue (',' stringValue)*)* ']'
     ;
 
 pair
-    : key ':' value
+    : key ':' stringValue
     ;
 
 key
     :STRING_LITERAL
     ;
 
-value
+stringValue
     : booleanLiteral
     | stringLiteral
     | nullLiteral
@@ -92,5 +92,5 @@ object
     ;
 
 array
-    : '[' (value (',' value)*)* ']'
+    : '[' (stringValue (',' stringValue)*)* ']'
     ;
