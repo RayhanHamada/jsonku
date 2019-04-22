@@ -27,15 +27,6 @@
 
     </dependencies>
 
-<!--    <distributionManagement>-->
-<!--        &lt;!&ndash; use the following if you're not using a snapshot version. &ndash;&gt;-->
-<!--        <repository>-->
-<!--            <id>jsonku</id>-->
-<!--            <name>jsonku</name>-->
-<!--            <url>https://github.com/RayhanHamada/jsonku.git</url>-->
-<!--        </repository>-->
-<!--    </distributionManagement>-->
-
     <build>
         <plugins>
             <!-- any other plugins -->
@@ -52,7 +43,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.jsonku.core.Main</mainClass>
+
                         </manifest>
                     </archive>
                     <descriptorRefs>
