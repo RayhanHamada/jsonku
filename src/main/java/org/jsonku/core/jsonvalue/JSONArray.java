@@ -48,6 +48,50 @@ public class JSONArray extends JSONValue{
     }
 
     /*
+    * getters with json pointer
+    * */
+
+    public JSONValue getValueWithPointer(String pointerString) throws Exception
+    {
+        String[] pNames = pointerString.split("(?<=[^\\\\])/");
+
+        if (isNumeric(pNames[0]))
+        {
+            String nString = "";
+
+            if (pNames.length != 1)
+            {
+                for (int i = 1; i < pNames.length; i++) {
+                    nString += pNames[i] + "/";
+                }
+                nString = nString.substring(0, nString.length() - 1);
+            }
+            else
+            {
+                nString = pNames[0];
+            }
+
+            if (elements.get(Integer.valueOf(pNames[0])) instanceof JSONObject)
+            {
+                if (pNames.length == 1) return ((JSONObject)elements.get(Integer.valueOf(pNames[0])));
+                return ((JSONObject) elements.get(Integer.valueOf(pNames[0]))).getValueWithPointer(nString);
+            }
+            else if (elements.get(Integer.valueOf(pNames[0])) instanceof JSONArray)
+            {
+                return ((JSONArray) elements.get(Integer.valueOf(pNames[0]))).getValueWithPointer(nString);
+            }
+            else
+            {
+                return elements.get(Integer.valueOf(pNames[0]));
+            }
+
+        }
+
+        throw new Exception("array element cannot be accessed using non-integer pointer");
+    }
+
+
+    /*
      * general getters, need to cast because it return abstract stringValue
      * */
     public JSONValue getValueAt(int i)
@@ -316,7 +360,7 @@ public class JSONArray extends JSONValue{
             else stringValue += v.toString() + ", ";
         }
 
-        stringValue = stringValue.replaceAll(", $", "") + "]";
+        stringValue = stringValue.replaceAll("(,| ,)$", "") + "]";
     }
 
     public ArrayList<JSONValue> getElements() {

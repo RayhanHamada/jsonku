@@ -7,7 +7,6 @@ import java.io.*;
 
 public class JSONFile extends File {
 
-
     private String stringRepr;
     private JSONObject jsonObject = null;
     private JSONArray jsonArray = null;
@@ -109,14 +108,8 @@ public class JSONFile extends File {
 
     public void dump() throws Exception
     {
-        if (isObject)
-        {
-            stringRepr = jsonObject.toString();
-        }
-        else
-        {
-            stringRepr = jsonArray.toString();
-        }
+        if (isObject) stringRepr = jsonObject.toString();
+        else stringRepr = jsonArray.toString();
 
         try{
             FileWriter fileWriter = new FileWriter(this);

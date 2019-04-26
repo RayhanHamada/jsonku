@@ -1,5 +1,6 @@
 package org.jsonku.core.jsonvalue;
 
+import com.sun.xml.internal.fastinfoset.util.StringArray;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -9,6 +10,9 @@ import org.jsonku.core.exception.KeyNotFoundException;
 import org.jsonku.core.listener.BaseListener;
 import org.jsonku.core.antlrgenerated.JSONLexer;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +21,7 @@ import java.util.Objects;
 public class JSONObject extends JSONValue {
 
     private String value; // for string representation
+    private File jsonFile;
 
     /*
     * save the duplicates as string of pairs, and added it into the top of value variable.
@@ -33,6 +38,7 @@ public class JSONObject extends JSONValue {
     {
         this.value = "{}";
         this.valueMap = new HashMap<>();
+        this.jsonFile = null;
     }
 
     /*
@@ -42,6 +48,7 @@ public class JSONObject extends JSONValue {
     {
         this.value = value;
         this.valueMap = new HashMap<>();
+        this.jsonFile = null;
 
         /*
         * if the value is not null or not equal to the string "null" then parse it, if not, then don't parse
@@ -60,10 +67,50 @@ public class JSONObject extends JSONValue {
     }
 
     /*
+    * getters with json pointer
+    * */
+
+    public JSONValue getValueWithPointer(String pointerString) throws Exception
+    {
+        String[] pNames = pointerString.split("(?<=[^\\\\])/");
+
+        if (valueMap.containsKey(pNames[0])) {
+            String nString = "";
+            if (pNames.length != 1)
+            {
+                for (int i = 1; i < pNames.length; i++) {
+                    nString += pNames[i] + "/";
+                }
+                nString = nString.substring(0, nString.length() - 1);
+            }
+            else
+            {
+                nString = pNames[0];
+            }
+
+            if (valueMap.get(pNames[0]) instanceof JSONObject)
+            {
+                return ((JSONObject) valueMap.get(pNames[0])).getValueWithPointer(nString);
+            }
+            else if (valueMap.get(pNames[0]) instanceof JSONArray)
+            {
+                return ((JSONArray) valueMap.get(pNames[0])).getValueWithPointer(nString);
+            }
+            else
+            {
+                return valueMap.get(nString);
+            }
+        }
+
+        throw new KeyNotFoundException();
+    }
+
+    /*
     * getters for all JSON Value type
     * */
 
     public JSONObject getJSONObjectOf(String key) {
+
         if (valueMap.containsKey(key))
         {
             /* if the valueMap.get(key) is an instance of JSONNull, then just return new JSONObject with with null string argument.
