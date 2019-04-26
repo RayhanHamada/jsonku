@@ -1,6 +1,5 @@
 package org.jsonku.core.jsonvalue;
 
-import com.sun.xml.internal.fastinfoset.util.StringArray;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -10,9 +9,6 @@ import org.jsonku.core.exception.KeyNotFoundException;
 import org.jsonku.core.listener.BaseListener;
 import org.jsonku.core.antlrgenerated.JSONLexer;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +17,6 @@ import java.util.Objects;
 public class JSONObject extends JSONValue {
 
     private String value; // for string representation
-    private File jsonFile;
 
     /*
     * save the duplicates as string of pairs, and added it into the top of value variable.
@@ -38,7 +33,6 @@ public class JSONObject extends JSONValue {
     {
         this.value = "{}";
         this.valueMap = new HashMap<>();
-        this.jsonFile = null;
     }
 
     /*
@@ -48,7 +42,6 @@ public class JSONObject extends JSONValue {
     {
         this.value = value;
         this.valueMap = new HashMap<>();
-        this.jsonFile = null;
 
         /*
         * if the value is not null or not equal to the string "null" then parse it, if not, then don't parse
@@ -72,6 +65,7 @@ public class JSONObject extends JSONValue {
 
     public JSONValue getValueWithPointer(String pointerString) throws Exception
     {
+
         String[] pNames = pointerString.split("(?<=[^\\\\])/");
 
         if (valueMap.containsKey(pNames[0])) {

@@ -30,7 +30,6 @@ public class JSONArray extends JSONValue{
         /*
          * if the stringValue is null or an empty array then don't parse it, if not, then parse
          * */
-
         if (stringValue != null)
         {
             if (!stringValue.equals("[]"))
@@ -50,7 +49,6 @@ public class JSONArray extends JSONValue{
     /*
     * getters with json pointer
     * */
-
     public JSONValue getValueWithPointer(String pointerString) throws Exception
     {
         String[] pNames = pointerString.split("(?<=[^\\\\])/");
@@ -360,7 +358,7 @@ public class JSONArray extends JSONValue{
             else stringValue += v.toString() + ", ";
         }
 
-        stringValue = stringValue.replaceAll("(,| ,)$", "") + "]";
+        stringValue = stringValue.replaceAll("(,|,\\s+)$", "") + "]";
     }
 
     public ArrayList<JSONValue> getElements() {
