@@ -209,6 +209,21 @@ public class JSONObject extends JSONValue {
         throw new NumberFormatException();
     }
 
+    public void putNumber(String key, int value)
+    {
+        valueMap.put(key, new JSONNumber(value));
+    }
+
+    public void putNumber(String key, float value)
+    {
+        valueMap.put(key, new JSONNumber(value));
+    }
+
+    public void putNumber(String key, long value)
+    {
+        valueMap.put(key, new JSONNumber(value));
+    }
+
     public void putBoolean(String key, boolean value)
     {
         valueMap.put(key, new JSONBoolean(value));
