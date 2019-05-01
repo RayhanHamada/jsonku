@@ -53,6 +53,7 @@ public class JSONArray extends JSONValue{
     {
         String[] pNames = pointerString.split("(?<=[^\\\\])/");
 
+        // check if the first element of pNames is an integer number
         if (isNumeric(pNames[0]))
         {
             String nString = "";
@@ -156,7 +157,7 @@ public class JSONArray extends JSONValue{
     }
 
     /*
-     * general setters, in order to use the return stringValue, cast the return stringValue to the wanted stringValue type if you want to use the stringValue
+     * general setters, in order to use the return value, cast the return value to the wanted value type.
      * */
     public JSONValue setValueAt(int i, JSONValue v)
     {

@@ -188,9 +188,21 @@ public class JSONObject extends JSONValue {
         return (JSONObject) valueMap.get(key);
     }
 
+    public JSONObject createObjectFrom(String key, JSONObject object)
+    {
+        valueMap.put(key, object);
+        return (JSONObject) valueMap.get(key);
+    }
+
     public JSONArray createEmptyArray(String key)
     {
         valueMap.put(key, new JSONArray());
+        return (JSONArray) valueMap.get(key);
+    }
+
+    public JSONArray createArrayFrom(String key, JSONArray array)
+    {
+        valueMap.put(key, array);
         return (JSONArray) valueMap.get(key);
     }
 
@@ -275,9 +287,6 @@ public class JSONObject extends JSONValue {
      * */
     public void swapToDuplicates(String key)
     {
-        /*
-         * the valueMap.get() method return Object type value. so we have to check if the value is also an instance of one of the subclass of JSONValue
-         * */
 
         if (valueMap.get(key) instanceof JSONObject)
         {
